@@ -2,7 +2,7 @@ LIBRARY ieee;
 USE ieee.std_logic_1164.ALL;
 use ieee.numeric_std.all;
 
-entity divisorGenerico is
+entity divisor is
     generic
     (divisor : natural := 8);
     port(
@@ -11,7 +11,7 @@ entity divisorGenerico is
         );
 end entity;
 
-architecture divisaoPor2 of divisorGenerico is
+architecture divisaoPor2 of divisor is
     signal tick : std_logic;
 begin
     process(clk)
@@ -24,7 +24,7 @@ begin
 end architecture;
 
 
-architecture divisaoGenerica of divisorGenerico is
+architecture divisaoGenerica of divisor is
     signal cnt : std_logic_vector(divisor downto 0);
     begin  
         process(clk)
