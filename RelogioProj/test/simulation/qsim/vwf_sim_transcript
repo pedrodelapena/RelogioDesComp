@@ -1,0 +1,286 @@
+Determining the location of the ModelSim executable...
+
+Using: c:/intelfpga_lite/18.0/modelsim_ase/win32aloem/
+
+To specify a ModelSim executable directory, select: Tools -> Options -> EDA Tool Options
+Note: if both ModelSim-Altera and ModelSim executables are available, ModelSim-Altera will be used.
+
+**** Generating the ModelSim Testbench ****
+
+quartus_eda --gen_testbench --tool=modelsim_oem --format=vhdl --write_settings_files=off FPGA_TEST -c FPGA_TEST --vector_source="C:/intelFPGA_lite/18.0/RelogioProj/test/output_files/Waveform25.vwf" --testbench_file="C:/intelFPGA_lite/18.0/RelogioProj/test/simulation/qsim/output_files/Waveform25.vwf.vht"
+
+Info: *******************************************************************
+Info: Running Quartus Prime EDA Netlist Writer
+    Info: Version 18.0.0 Build 614 04/24/2018 SJ Lite Edition
+    Info: Copyright (C) 2018  Intel Corporation. All rights reserved.
+    Info: Your use of Intel Corporation's design tools, logic functions 
+    Info: and other software and tools, and its AMPP partner logic 
+    Info: functions, and any output files from any of the foregoing 
+    Info: (including device programming or simulation files), and any 
+    Info: associated documentation or information are expressly subject 
+    Info: to the terms and conditions of the Intel Program License 
+    Info: Subscription Agreement, the Intel Quartus Prime License Agreement,
+    Info: the Intel FPGA IP License Agreement, or other applicable license
+    Info: agreement, including, without limitation, that your use is for
+    Info: the sole purpose of programming logic devices manufactured by
+    Info: Intel and sold by Intel or its authorized distributors.  Please
+    Info: refer to the applicable agreement for further details.
+    Info: Processing started: Thu Sep 27 20:49:05 2018
+Info: Command: quartus_eda --gen_testbench --tool=modelsim_oem --format=vhdl --write_settings_files=off FPGA_TEST -c FPGA_TEST --vector_source=C:/intelFPGA_lite/18.0/RelogioProj/test/output_files/Waveform25.vwf --testbench_file=C:/intelFPGA_lite/18.0/RelogioProj/test/simulation/qsim/output_files/Waveform25.vwf.vht
+Info (119006): Selected device EP4CE115F29C7 for design "FPGA_TEST"
+Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
+
+_in[28]" in design
+
+Completed successfully. 
+
+**** Generating the functional simulation netlist ****
+
+quartus_eda --write_settings_files=off --simulation --functional=on --flatten_buses=off --tool=modelsim_oem --format=vhdl --output_directory="C:/intelFPGA_lite/18.0/RelogioProj/test/simulation/qsim/" FPGA_TEST -c FPGA_TEST
+
+Info: *******************************************************************
+Info: Running Quartus Prime EDA Netlist Writer
+    Info: Version 18.0.0 Build 614 04/24/2018 SJ Lite Edition
+    Info: Copyright (C) 2018  Intel Corporation. All rights reserved.
+    Info: Your use of Intel Corporation's design tools, logic functions 
+    Info: and other software and tools, and its AMPP partner logic 
+    Info: functions, and any output files from any of the foregoing 
+    Info: (including device programming or simulation files), and any 
+    Info: associated documentation or information are expressly subject 
+    Info: to the terms and conditions of the Intel Program License 
+    Info: Subscription Agreement, the Intel Quartus Prime License Agreement,
+    Info: the Intel FPGA IP License Agreement, or other applicable license
+    Info: agreement, including, without limitation, that your use is for
+    Info: the sole purpose of programming logic devices manufactured by
+    Info: Intel and sold by Intel or its authorized distributors.  Please
+    Info: refer to the applicable agreement for further details.
+    Info: Processing started: Thu Sep 27 20:49:07 2018
+Info: Command: quartus_eda --write_settings_files=off --simulation=on --functional=on --flatten_buses=off --tool=modelsim_oem --format=vhdl --output_directory=C:/intelFPGA_lite/18.0/RelogioProj/test/simulation/qsim/ FPGA_TEST -c FPGA_TEST
+Info (119006): Selected device EP4CE115F29C7 for design "FPGA_TEST"
+Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
+Info (204019): Generated file FPGA_TEST.vho in folder "C:/intelFPGA_lite/18.0/RelogioProj/test/simulation/qsim//" for EDA simulation tool
+Info: Quartus Prime EDA Netlist Writer was successful. 0 errors, 1 warning
+    Info: Peak virtual memory: 4661 megabytes
+    Info: Processing ended: Thu Sep 27 20:49:08 2018
+    Info: Elapsed time: 00:00:01
+    Info: Total CPU time (on all processors): 00:00:01
+
+Completed successfully. 
+
+**** Generating the ModelSim .do script ****
+
+C:/intelFPGA_lite/18.0/RelogioProj/test/simulation/qsim/FPGA_TEST.do generated.
+
+Completed successfully. 
+
+**** Running the ModelSim simulation ****
+
+c:/intelfpga_lite/18.0/modelsim_ase/win32aloem//vsim -c -do FPGA_TEST.do
+
+Reading C:/intelFPGA_lite/18.0/modelsim_ase/tcl/vsim/pref.tcl
+
+# 10.5b
+
+
+# do FPGA_TEST.do
+# ** Warning: (vlib-34) Library already exists at "work".
+
+# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 20:49:09 on Sep 27,2018
+# vcom -work work FPGA_TEST.vho 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package VITAL_Timing
+# -- Loading package VITAL_Primitives
+# -- Loading package dffeas_pack
+# -- Loading package altera_primitives_components
+# -- Loading package cycloneive_atom_pack
+# -- Loading package cycloneive_components
+# -- Compiling entity pulsoSegundo
+# -- Compiling architecture structure of pulsoSegundo
+
+# End time: 20:49:09 on Sep 27,2018, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 20:49:09 on Sep 27,2018
+# vcom -work work output_files/Waveform25.vwf.vht 
+# -- Loading package STANDARD
+
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity pulsoSegundo_vhd_vec_tst
+# -- Compiling architecture pulsoSegundo_arch of pulsoSegundo_vhd_vec_tst
+# End time: 20:49:09 on Sep 27,2018, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+
+# vsim -novopt -c -t 1ps -L cycloneive -L altera -L altera_mf -L 220model -L sgate -L altera_lnsim work.pulsoSegundo_vhd_vec_tst 
+# Start time: 20:49:09 on Sep 27,2018
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading work.pulsosegundo_vhd_vec_tst(pulsosegundo_arch)
+# Loading ieee.vital_timing(body)
+# Loading ieee.vital_primitives(body)
+# Loading altera.dffeas_pack
+# Loading altera.altera_primitives_components
+# Loading cycloneive.cycloneive_atom_pack(body)
+# Loading cycloneive.cycloneive_components
+# Loading work.pulsosegundo(structure)
+# Loading ieee.std_logic_arith(body)
+# Loading cycloneive.cycloneive_io_obuf(arch)
+# Loading cycloneive.cycloneive_io_ibuf(arch)
+# Loading cycloneive.cycloneive_lcell_comb(vital_lcell_comb)
+# Loading altera.dffeas(vital_dffeas)
+# ** Warning: Design size of 11443 statements exceeds ModelSim-Intel FPGA Starter Edition recommended capacity.
+# Expect performance to be adversely affected.
+# after#33
+
+# End time: 20:49:09 on Sep 27,2018, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 1
+
+Completed successfully. 
+
+**** Converting ModelSim VCD to vector waveform ****
+
+Reading C:/intelFPGA_lite/18.0/RelogioProj/test/output_files/Waveform25.vwf...
+
+Reading C:/intelFPGA_lite/18.0/RelogioProj/test/simulation/qsim/FPGA_TEST.msim.vcd...
+
+Processing channel transitions... 
+
+Warning: cnt_clear[31] - signal not found in VCD.
+
+Warning: cnt_clear[30] - signal not found in VCD.
+
+Warning: cnt_clear[29] - signal not found in VCD.
+
+Warning: cnt_clear[28] - signal not found in VCD.
+
+Warning: cnt_clear[27] - signal not found in VCD.
+
+Warning: cnt_clear[26] - signal not found in VCD.
+
+Warning: cnt_clear[25] - signal not found in VCD.
+
+Warning: cnt_clear[24] - signal not found in VCD.
+
+Warning: cnt_clear[23] - signal not found in VCD.
+
+Warning: cnt_clear[22] - signal not found in VCD.
+
+Warning: cnt_clear[21] - signal not found in VCD.
+
+Warning: cnt_clear[20] - signal not found in VCD.
+
+Warning: cnt_clear[19] - signal not found in VCD.
+
+Warning: cnt_clear[18] - signal not found in VCD.
+
+Warning: cnt_clear[17] - signal not found in VCD.
+
+Warning: cnt_clear[16] - signal not found in VCD.
+
+Warning: cnt_clear[15] - signal not found in VCD.
+
+Warning: cnt_clear[14] - signal not found in VCD.
+
+Warning: cnt_clear[13] - signal not found in VCD.
+
+Warning: cnt_clear[12] - signal not found in VCD.
+
+Warning: cnt_clear[11] - signal not found in VCD.
+
+Warning: cnt_clear[10] - signal not found in VCD.
+
+Warning: cnt_clear[9] - signal not found in VCD.
+
+Warning: cnt_clear[8] - signal not found in VCD.
+
+Warning: cnt_clear[7] - signal not found in VCD.
+
+Warning: cnt_clear[6] - signal not found in VCD.
+
+Warning: cnt_clear[5] - signal not found in VCD.
+
+Warning: cnt_clear[4] - signal not found in VCD.
+
+Warning: cnt_clear[3] - signal not found in VCD.
+
+Warning: cnt_clear[2] - signal not found in VCD.
+
+Warning: cnt_clear[1] - signal not found in VCD.
+
+Warning: cnt_clear[0] - signal not found in VCD.
+
+Warning: cnt_out[31] - signal not found in VCD.
+
+Warning: cnt_out[30] - signal not found in VCD.
+
+Warning: cnt_out[29] - signal not found in VCD.
+
+Warning: cnt_out[28] - signal not found in VCD.
+
+Warning: cnt_out[27] - signal not found in VCD.
+
+Warning: cnt_out[26] - signal not found in VCD.
+
+Warning: cnt_out[25] - signal not found in VCD.
+
+Warning: cnt_out[24] - signal not found in VCD.
+
+Warning: cnt_out[23] - signal not found in VCD.
+
+Warning: cnt_out[22] - signal not found in VCD.
+
+Warning: cnt_out[21] - signal not found in VCD.
+
+Warning: cnt_out[20] - signal not found in VCD.
+
+Warning: cnt_out[19] - signal not found in VCD.
+
+Warning: cnt_out[18] - signal not found in VCD.
+
+Warning: cnt_out[17] - signal not found in VCD.
+
+Warning: cnt_out[16] - signal not found in VCD.
+
+Warning: cnt_out[15] - signal not found in VCD.
+
+Warning: cnt_out[14] - signal not found in VCD.
+
+Warning: cnt_out[13] - signal not found in VCD.
+
+Warning: cnt_out[12] - signal not found in VCD.
+
+Warning: cnt_out[11] - signal not found in VCD.
+
+Warning: cnt_out[10] - signal not found in VCD.
+
+Warning: cnt_out[9] - signal not found in VCD.
+
+Warning: cnt_out[8] - signal not found in VCD.
+
+Warning: cnt_out[7] - signal not found in VCD.
+
+Warning: cnt_out[6] - signal not found in VCD.
+
+Warning: cnt_out[5] - signal not found in VCD.
+
+Warning: cnt_out[4] - signal not found in VCD.
+
+Warning: cnt_out[3] - signal not found in VCD.
+
+Warning: cnt_out[2] - signal not found in VCD.
+
+Warning: cnt_out[1] - signal not found in VCD.
+
+Warning: cnt_out[0] - signal not found in VCD.
+
+Writing the resulting VWF to C:/intelFPGA_lite/18.0/RelogioProj/test/simulation/qsim/FPGA_TEST_20180927204910.sim.vwf
+
+Finished VCD to VWF conversion.
+
+Completed successfully. 
+
+All completed.

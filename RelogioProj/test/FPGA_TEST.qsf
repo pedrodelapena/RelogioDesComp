@@ -38,7 +38,7 @@
 
 set_global_assignment -name FAMILY "Cyclone IV E"
 set_global_assignment -name DEVICE EP4CE115F29C7
-set_global_assignment -name TOP_LEVEL_ENTITY calculadora
+set_global_assignment -name TOP_LEVEL_ENTITY pulsoSegundo
 set_global_assignment -name ORIGINAL_QUARTUS_VERSION 18.0.0
 set_global_assignment -name PROJECT_CREATION_TIME_DATE "15:17:52  SEPTEMBER 18, 2018"
 set_global_assignment -name LAST_QUARTUS_VERSION "18.0.0 Lite Edition"
@@ -575,15 +575,36 @@ set_location_assignment PIN_H14 -to EXT_IO[3]
 set_location_assignment PIN_F14 -to EXT_IO[4]
 set_location_assignment PIN_E10 -to EXT_IO[5]
 set_location_assignment PIN_D9 -to EXT_IO[6]
+set_global_assignment -name VHDL_FILE registrador.vhd
+set_global_assignment -name VHDL_FILE fluxoDados.vhd
+set_global_assignment -name VHDL_FILE ULA.vhd
+set_global_assignment -name VHDL_FILE acc05.vhd
+set_global_assignment -name VHDL_FILE conversorHex7Seg.vhd
+set_global_assignment -name VHDL_FILE divisorSegundo.vhd
+set_global_assignment -name VHDL_FILE pulsoSegundo.vhd
+set_global_assignment -name VHDL_FILE acc09.vhd
+set_global_assignment -name VHDL_FILE Relogio.vhd
+set_global_assignment -name VECTOR_WAVEFORM_FILE output_files/Waveform6.vwf
+set_global_assignment -name VECTOR_WAVEFORM_FILE output_files/Waveform7.vwf
+set_global_assignment -name VECTOR_WAVEFORM_FILE output_files/Waveform8.vwf
+set_global_assignment -name VECTOR_WAVEFORM_FILE output_files/Waveform9.vwf
+set_global_assignment -name VECTOR_WAVEFORM_FILE output_files/Waveform10.vwf
+set_global_assignment -name VECTOR_WAVEFORM_FILE output_files/Waveform11.vwf
+set_global_assignment -name VECTOR_WAVEFORM_FILE output_files/Waveform12.vwf
+set_global_assignment -name VECTOR_WAVEFORM_FILE output_files/Waveform13.vwf
+set_global_assignment -name VECTOR_WAVEFORM_FILE output_files/Waveform14.vwf
+set_global_assignment -name VECTOR_WAVEFORM_FILE output_files/Waveform15.vwf
+set_global_assignment -name VECTOR_WAVEFORM_FILE output_files/Waveform16.vwf
+set_global_assignment -name VECTOR_WAVEFORM_FILE output_files/Waveform17.vwf
+set_global_assignment -name VECTOR_WAVEFORM_FILE output_files/Waveform18.vwf
+set_global_assignment -name VECTOR_WAVEFORM_FILE output_files/Waveform19.vwf
+set_global_assignment -name VECTOR_WAVEFORM_FILE output_files/Waveform20.vwf
 set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -section_id Top
 set_global_assignment -name PARTITION_FITTER_PRESERVATION_LEVEL PLACEMENT_AND_ROUTING -section_id Top
 set_global_assignment -name PARTITION_COLOR 16764057 -section_id Top
-set_global_assignment -name VHDL_FILE ULA.vhd
-set_global_assignment -name VHDL_FILE registrador.vhd
-set_global_assignment -name VHDL_FILE divisorGenerico.vhd
-set_global_assignment -name VHDL_FILE conversorHex7Seg.vhd
-set_global_assignment -name VHDL_FILE FPGA_TEST.vhd
-set_global_assignment -name VHDL_FILE calculadora.vhd
-set_global_assignment -name VHDL_FILE fluxoDados.vhd
+set_global_assignment -name VECTOR_WAVEFORM_FILE output_files/Waveform21.vwf
+set_global_assignment -name VECTOR_WAVEFORM_FILE output_files/Waveform22.vwf
+set_global_assignment -name VECTOR_WAVEFORM_FILE output_files/Waveform23.vwf
+set_global_assignment -name VECTOR_WAVEFORM_FILE output_files/Waveform24.vwf
 set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top
-set_global_assignment -name SMF_FILE SM1.smf
+set_global_assignment -name VECTOR_WAVEFORM_FILE output_files/Waveform25.vwf
