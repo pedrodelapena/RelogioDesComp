@@ -12,7 +12,7 @@ O projeto consiste na implementação de um relógio digital utilizando uma FPGA
 -Modo debugger com 10 velocidades que faz os segundos passarem mais rápido para a vizualização das demais funcionalidades;  
 -Reset, retornando todos os números do relógio para 0.  
 
-![Placa](RelogioDesComp/doc/fpga.png)
+![Placa](RelogioDesComp/doc/fpga)
 
 Um video demonstrativo pode ser encontrado no [Youtube](https://www.youtube.com/watch?v=nVh3ch9Pl34) ou nesta [pasta](RelogioDesComp/Video_Demo)
 
