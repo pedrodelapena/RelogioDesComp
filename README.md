@@ -18,4 +18,4 @@ Um video demonstrativo pode ser encontrado no [Youtube](https://www.youtube.com/
 
 ## Fluxo de dados
 
-![Placa](/doc/block.png)
+![Placa](https://i.imgur.com/S0X1NxP.png)
