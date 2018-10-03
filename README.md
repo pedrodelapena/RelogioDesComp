@@ -1,7 +1,6 @@
 # RelogioDesComp
-
-## Grupo: Alexandre Young, Jean Luca, Paulo Tozzo, Pedro de la Peña
 ## Design de Computadores - Engenharia Insper 6º Semestre
+### Grupo: Alexandre Young, Jean Luca, Paulo Tozzo, Pedro de la Peña
 
 ## Descrição do Projeto
 O projeto consiste na implementação de um relógio digital utilizando uma FPGA DE2-115 da Altera. A exibição de hora ocorre nos displays de 7 segmentos da placa e as funcionalidades do relógio compreendem:  
