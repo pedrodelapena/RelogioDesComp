@@ -13,6 +13,9 @@ O projeto consiste na implementação de um relógio digital utilizando uma FPGA
 
 ![Placa](/doc/fpga.png)
 
+Uma responsividade adicional foi dada aos botões utilizando um debouncer.-
 Um video demonstrativo pode ser encontrado no [Youtube](https://www.youtube.com/watch?v=nVh3ch9Pl34) ou nesta [pasta](/Video_Demo)
 
 ## Fluxo de dados
+
+![Placa](/doc/block.png)
