@@ -1,0 +1,1135 @@
+Analysis & Synthesis report for FPGA_TEST
+Wed Oct 03 00:40:18 2018
+Quartus Prime Version 18.0.0 Build 614 04/24/2018 SJ Lite Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Analysis & Synthesis Summary
+  3. Analysis & Synthesis Settings
+  4. Parallel Compilation
+  5. Analysis & Synthesis Source Files Read
+  6. Analysis & Synthesis Resource Usage Summary
+  7. Analysis & Synthesis Resource Utilization by Entity
+  8. Registers Removed During Synthesis
+  9. General Register Statistics
+ 10. Inverted Register Statistics
+ 11. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 12. Parameter Settings for User Entity Instance: Top-level Entity: |Relogio
+ 13. Parameter Settings for User Entity Instance: pulsoDivisor:pulsoBlink
+ 14. Parameter Settings for User Entity Instance: acumulador:speedFactor
+ 15. Parameter Settings for User Entity Instance: pulsoDivisor:pulsoSegundo
+ 16. Parameter Settings for User Entity Instance: pulsoDivisor:pulsoDecSegundo
+ 17. Parameter Settings for User Entity Instance: pulsoDivisor:pulsoMinuto
+ 18. Parameter Settings for User Entity Instance: pulsoDivisor:pulsoDecMinuto
+ 19. Parameter Settings for User Entity Instance: pulsoDivisor:pulsoHora
+ 20. Parameter Settings for User Entity Instance: acumulador:controlOption
+ 21. Parameter Settings for User Entity Instance: acumulador:segundo
+ 22. Parameter Settings for User Entity Instance: acumulador:decSegundo
+ 23. Parameter Settings for User Entity Instance: acumulador:minuto
+ 24. Parameter Settings for User Entity Instance: acumulador:decMinuto
+ 25. Parameter Settings for User Entity Instance: acumulador:hora
+ 26. Parameter Settings for User Entity Instance: hourDecoder:outputHour
+ 27. Parameter Settings for Inferred Entity Instance: hourDecoder:outputHour|ULA:hourULA|lpm_divide:Div0
+ 28. Parameter Settings for Inferred Entity Instance: hourDecoder:outputHour|ULA:hourULA|lpm_divide:Mod2
+ 29. Parameter Settings for Inferred Entity Instance: hourDecoder:outputHour|ULA:hourULA|lpm_divide:Mod0
+ 30. Parameter Settings for Inferred Entity Instance: hourDecoder:outputHour|ULA:hourULA|lpm_divide:Mod1
+ 31. Parameter Settings for Inferred Entity Instance: hourDecoder:outputHour|ULA:hourULA|lpm_divide:Div2
+ 32. Parameter Settings for Inferred Entity Instance: hourDecoder:outputHour|ULA:hourULA|lpm_divide:Div1
+ 33. Port Connectivity Checks: "hourDecoder:outputHour|ULA:hourULA"
+ 34. Port Connectivity Checks: "acumulador:hora|ULA:accULA"
+ 35. Port Connectivity Checks: "acumulador:decMinuto"
+ 36. Port Connectivity Checks: "acumulador:minuto"
+ 37. Port Connectivity Checks: "acumulador:decSegundo"
+ 38. Port Connectivity Checks: "acumulador:segundo"
+ 39. Port Connectivity Checks: "menu_controller:menuControl"
+ 40. Port Connectivity Checks: "acumulador:controlOption|ULA:accULA"
+ 41. Port Connectivity Checks: "pulsoDivisor:pulsoHora"
+ 42. Port Connectivity Checks: "pulsoDivisor:pulsoDecMinuto"
+ 43. Port Connectivity Checks: "pulsoDivisor:pulsoMinuto"
+ 44. Port Connectivity Checks: "pulsoDivisor:pulsoDecSegundo"
+ 45. Port Connectivity Checks: "ULA:getFreq"
+ 46. Port Connectivity Checks: "acumulador:speedFactor|ULA:accULA"
+ 47. Port Connectivity Checks: "pulsoDivisor:pulsoBlink|ULA:B0"
+ 48. Port Connectivity Checks: "pulsoDivisor:pulsoBlink"
+ 49. Post-Synthesis Netlist Statistics for Top Partition
+ 50. Elapsed Time Per Partition
+ 51. Analysis & Synthesis Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 2018  Intel Corporation. All rights reserved.
+Your use of Intel Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Intel Program License 
+Subscription Agreement, the Intel Quartus Prime License Agreement,
+the Intel FPGA IP License Agreement, or other applicable license
+agreement, including, without limitation, that your use is for
+the sole purpose of programming logic devices manufactured by
+Intel and sold by Intel or its authorized distributors.  Please
+refer to the applicable agreement for further details.
+
+
+
++----------------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                                     ;
++------------------------------------+---------------------------------------------+
+; Analysis & Synthesis Status        ; Successful - Wed Oct 03 00:40:17 2018       ;
+; Quartus Prime Version              ; 18.0.0 Build 614 04/24/2018 SJ Lite Edition ;
+; Revision Name                      ; FPGA_TEST                                   ;
+; Top-level Entity Name              ; Relogio                                     ;
+; Family                             ; Cyclone IV E                                ;
+; Total logic elements               ; 6,531                                       ;
+;     Total combinational functions  ; 6,531                                       ;
+;     Dedicated logic registers      ; 458                                         ;
+; Total registers                    ; 458                                         ;
+; Total pins                         ; 79                                          ;
+; Total virtual pins                 ; 0                                           ;
+; Total memory bits                  ; 0                                           ;
+; Embedded Multiplier 9-bit elements ; 0                                           ;
+; Total PLLs                         ; 0                                           ;
++------------------------------------+---------------------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Settings                                                                              ;
++------------------------------------------------------------------+--------------------+--------------------+
+; Option                                                           ; Setting            ; Default Value      ;
++------------------------------------------------------------------+--------------------+--------------------+
+; Device                                                           ; EP4CE115F29C7      ;                    ;
+; Top-level entity name                                            ; Relogio            ; FPGA_TEST          ;
+; Family name                                                      ; Cyclone IV E       ; Cyclone V          ;
+; VHDL Show LMF Mapping Messages                                   ; Off                ;                    ;
+; VHDL Version                                                     ; VHDL_2008          ; VHDL_1993          ;
+; Use smart compilation                                            ; Off                ; Off                ;
+; Enable parallel Assembler and Timing Analyzer during compilation ; On                 ; On                 ;
+; Enable compact report table                                      ; Off                ; Off                ;
+; Restructure Multiplexers                                         ; Auto               ; Auto               ;
+; Create Debugging Nodes for IP Cores                              ; Off                ; Off                ;
+; Preserve fewer node names                                        ; On                 ; On                 ;
+; Intel FPGA IP Evaluation Mode                                    ; Enable             ; Enable             ;
+; Verilog Version                                                  ; Verilog_2001       ; Verilog_2001       ;
+; State Machine Processing                                         ; Auto               ; Auto               ;
+; Safe State Machine                                               ; Off                ; Off                ;
+; Extract Verilog State Machines                                   ; On                 ; On                 ;
+; Extract VHDL State Machines                                      ; On                 ; On                 ;
+; Ignore Verilog initial constructs                                ; Off                ; Off                ;
+; Iteration limit for constant Verilog loops                       ; 5000               ; 5000               ;
+; Iteration limit for non-constant Verilog loops                   ; 250                ; 250                ;
+; Add Pass-Through Logic to Inferred RAMs                          ; On                 ; On                 ;
+; Infer RAMs from Raw Logic                                        ; On                 ; On                 ;
+; Parallel Synthesis                                               ; On                 ; On                 ;
+; DSP Block Balancing                                              ; Auto               ; Auto               ;
+; NOT Gate Push-Back                                               ; On                 ; On                 ;
+; Power-Up Don't Care                                              ; On                 ; On                 ;
+; Remove Redundant Logic Cells                                     ; Off                ; Off                ;
+; Remove Duplicate Registers                                       ; On                 ; On                 ;
+; Ignore CARRY Buffers                                             ; Off                ; Off                ;
+; Ignore CASCADE Buffers                                           ; Off                ; Off                ;
+; Ignore GLOBAL Buffers                                            ; Off                ; Off                ;
+; Ignore ROW GLOBAL Buffers                                        ; Off                ; Off                ;
+; Ignore LCELL Buffers                                             ; Off                ; Off                ;
+; Ignore SOFT Buffers                                              ; On                 ; On                 ;
+; Limit AHDL Integers to 32 Bits                                   ; Off                ; Off                ;
+; Optimization Technique                                           ; Balanced           ; Balanced           ;
+; Carry Chain Length                                               ; 70                 ; 70                 ;
+; Auto Carry Chains                                                ; On                 ; On                 ;
+; Auto Open-Drain Pins                                             ; On                 ; On                 ;
+; Perform WYSIWYG Primitive Resynthesis                            ; Off                ; Off                ;
+; Auto ROM Replacement                                             ; On                 ; On                 ;
+; Auto RAM Replacement                                             ; On                 ; On                 ;
+; Auto DSP Block Replacement                                       ; On                 ; On                 ;
+; Auto Shift Register Replacement                                  ; Auto               ; Auto               ;
+; Allow Shift Register Merging across Hierarchies                  ; Auto               ; Auto               ;
+; Auto Clock Enable Replacement                                    ; On                 ; On                 ;
+; Strict RAM Replacement                                           ; Off                ; Off                ;
+; Allow Synchronous Control Signals                                ; On                 ; On                 ;
+; Force Use of Synchronous Clear Signals                           ; Off                ; Off                ;
+; Auto RAM Block Balancing                                         ; On                 ; On                 ;
+; Auto RAM to Logic Cell Conversion                                ; Off                ; Off                ;
+; Auto Resource Sharing                                            ; Off                ; Off                ;
+; Allow Any RAM Size For Recognition                               ; Off                ; Off                ;
+; Allow Any ROM Size For Recognition                               ; Off                ; Off                ;
+; Allow Any Shift Register Size For Recognition                    ; Off                ; Off                ;
+; Use LogicLock Constraints during Resource Balancing              ; On                 ; On                 ;
+; Ignore translate_off and synthesis_off directives                ; Off                ; Off                ;
+; Timing-Driven Synthesis                                          ; On                 ; On                 ;
+; Report Parameter Settings                                        ; On                 ; On                 ;
+; Report Source Assignments                                        ; On                 ; On                 ;
+; Report Connectivity Checks                                       ; On                 ; On                 ;
+; Ignore Maximum Fan-Out Assignments                               ; Off                ; Off                ;
+; Synchronization Register Chain Length                            ; 2                  ; 2                  ;
+; Power Optimization During Synthesis                              ; Normal compilation ; Normal compilation ;
+; HDL message level                                                ; Level2             ; Level2             ;
+; Suppress Register Optimization Related Messages                  ; Off                ; Off                ;
+; Number of Removed Registers Reported in Synthesis Report         ; 5000               ; 5000               ;
+; Number of Swept Nodes Reported in Synthesis Report               ; 5000               ; 5000               ;
+; Number of Inverted Registers Reported in Synthesis Report        ; 100                ; 100                ;
+; Clock MUX Protection                                             ; On                 ; On                 ;
+; Auto Gated Clock Conversion                                      ; Off                ; Off                ;
+; Block Design Naming                                              ; Auto               ; Auto               ;
+; SDC constraint protection                                        ; Off                ; Off                ;
+; Synthesis Effort                                                 ; Auto               ; Auto               ;
+; Shift Register Replacement - Allow Asynchronous Clear Signal     ; On                 ; On                 ;
+; Pre-Mapping Resynthesis Optimization                             ; Off                ; Off                ;
+; Analysis & Synthesis Message Level                               ; Medium             ; Medium             ;
+; Disable Register Merging Across Hierarchies                      ; Auto               ; Auto               ;
+; Resource Aware Inference For Block RAM                           ; On                 ; On                 ;
++------------------------------------------------------------------+--------------------+--------------------+
+
+
++------------------------------------------+
+; Parallel Compilation                     ;
++----------------------------+-------------+
+; Processors                 ; Number      ;
++----------------------------+-------------+
+; Number detected on machine ; 4           ;
+; Maximum allowed            ; 2           ;
+;                            ;             ;
+; Average used               ; 1.00        ;
+; Maximum used               ; 2           ;
+;                            ;             ;
+; Usage by Processor         ; % Time Used ;
+;     Processor 1            ; 100.0%      ;
+;     Processor 2            ;   0.0%      ;
++----------------------------+-------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                                   ;
++----------------------------------+-----------------+------------------------------+----------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type                    ; File Name with Absolute Path                                               ; Library ;
++----------------------------------+-----------------+------------------------------+----------------------------------------------------------------------------+---------+
+; hourDecoder.vhd                  ; yes             ; User VHDL File               ; C:/intelFPGA_lite/18.0/RelogioProj/test/hourDecoder.vhd                    ;         ;
+; acumulador.vhd                   ; yes             ; User VHDL File               ; C:/intelFPGA_lite/18.0/RelogioProj/test/acumulador.vhd                     ;         ;
+; pulsoDivisor.vhd                 ; yes             ; User VHDL File               ; C:/intelFPGA_lite/18.0/RelogioProj/test/pulsoDivisor.vhd                   ;         ;
+; ULA.vhd                          ; yes             ; User VHDL File               ; C:/intelFPGA_lite/18.0/RelogioProj/test/ULA.vhd                            ;         ;
+; conversorHex7Seg.vhd             ; yes             ; User VHDL File               ; C:/intelFPGA_lite/18.0/RelogioProj/test/conversorHex7Seg.vhd               ;         ;
+; Relogio.vhd                      ; yes             ; User VHDL File               ; C:/intelFPGA_lite/18.0/RelogioProj/test/Relogio.vhd                        ;         ;
+; menu_controller.vhd              ; yes             ; User VHDL File               ; C:/intelFPGA_lite/18.0/RelogioProj/test/menu_controller.vhd                ;         ;
+; debouncer.vhd                    ; yes             ; User VHDL File               ; C:/intelFPGA_lite/18.0/RelogioProj/test/debouncer.vhd                      ;         ;
+; lpm_divide.tdf                   ; yes             ; Megafunction                 ; c:/intelfpga_lite/18.0/quartus/libraries/megafunctions/lpm_divide.tdf      ;         ;
+; abs_divider.inc                  ; yes             ; Megafunction                 ; c:/intelfpga_lite/18.0/quartus/libraries/megafunctions/abs_divider.inc     ;         ;
+; sign_div_unsign.inc              ; yes             ; Megafunction                 ; c:/intelfpga_lite/18.0/quartus/libraries/megafunctions/sign_div_unsign.inc ;         ;
+; aglobal180.inc                   ; yes             ; Megafunction                 ; c:/intelfpga_lite/18.0/quartus/libraries/megafunctions/aglobal180.inc      ;         ;
+; db/lpm_divide_0jm.tdf            ; yes             ; Auto-Generated Megafunction  ; C:/intelFPGA_lite/18.0/RelogioProj/test/db/lpm_divide_0jm.tdf              ;         ;
+; db/sign_div_unsign_olh.tdf       ; yes             ; Auto-Generated Megafunction  ; C:/intelFPGA_lite/18.0/RelogioProj/test/db/sign_div_unsign_olh.tdf         ;         ;
+; db/alt_u_div_47f.tdf             ; yes             ; Auto-Generated Megafunction  ; C:/intelFPGA_lite/18.0/RelogioProj/test/db/alt_u_div_47f.tdf               ;         ;
+; db/add_sub_7pc.tdf               ; yes             ; Auto-Generated Megafunction  ; C:/intelFPGA_lite/18.0/RelogioProj/test/db/add_sub_7pc.tdf                 ;         ;
+; db/add_sub_8pc.tdf               ; yes             ; Auto-Generated Megafunction  ; C:/intelFPGA_lite/18.0/RelogioProj/test/db/add_sub_8pc.tdf                 ;         ;
+; db/lpm_divide_kcm.tdf            ; yes             ; Auto-Generated Megafunction  ; C:/intelFPGA_lite/18.0/RelogioProj/test/db/lpm_divide_kcm.tdf              ;         ;
+; db/sign_div_unsign_9nh.tdf       ; yes             ; Auto-Generated Megafunction  ; C:/intelFPGA_lite/18.0/RelogioProj/test/db/sign_div_unsign_9nh.tdf         ;         ;
+; db/alt_u_div_6af.tdf             ; yes             ; Auto-Generated Megafunction  ; C:/intelFPGA_lite/18.0/RelogioProj/test/db/alt_u_div_6af.tdf               ;         ;
++----------------------------------+-----------------+------------------------------+----------------------------------------------------------------------------+---------+
+
+
++------------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary                ;
++---------------------------------------------+--------------+
+; Resource                                    ; Usage        ;
++---------------------------------------------+--------------+
+; Estimated Total logic elements              ; 6,531        ;
+;                                             ;              ;
+; Total combinational functions               ; 6531         ;
+; Logic element usage by number of LUT inputs ;              ;
+;     -- 4 input functions                    ; 1851         ;
+;     -- 3 input functions                    ; 1822         ;
+;     -- <=2 input functions                  ; 2858         ;
+;                                             ;              ;
+; Logic elements by mode                      ;              ;
+;     -- normal mode                          ; 4336         ;
+;     -- arithmetic mode                      ; 2195         ;
+;                                             ;              ;
+; Total registers                             ; 458          ;
+;     -- Dedicated logic registers            ; 458          ;
+;     -- I/O registers                        ; 0            ;
+;                                             ;              ;
+; I/O pins                                    ; 79           ;
+;                                             ;              ;
+; Embedded Multiplier 9-bit elements          ; 0            ;
+;                                             ;              ;
+; Maximum fan-out node                        ; KEY[0]~input ;
+; Maximum fan-out                             ; 432          ;
+; Total fan-out                               ; 19757        ;
+; Average fan-out                             ; 2.76         ;
++---------------------------------------------+--------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                                                                                                                        ;
++----------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+---------------------------------------------------------------------------------------------------------------------------------------------+---------------------+--------------+
+; Compilation Hierarchy Node                   ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                                                                         ; Entity Name         ; Library Name ;
++----------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+---------------------------------------------------------------------------------------------------------------------------------------------+---------------------+--------------+
+; |Relogio                                     ; 6531 (47)           ; 458 (0)                   ; 0           ; 0            ; 0       ; 0         ; 79   ; 0            ; |Relogio                                                                                                                                    ; Relogio             ; work         ;
+;    |ULA:getFreq|                             ; 45 (45)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Relogio|ULA:getFreq                                                                                                                        ; ULA                 ; work         ;
+;    |acumulador:controlOption|                ; 46 (3)              ; 32 (32)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Relogio|acumulador:controlOption                                                                                                           ; acumulador          ; work         ;
+;       |ULA:accULA|                           ; 43 (43)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Relogio|acumulador:controlOption|ULA:accULA                                                                                                ; ULA                 ; work         ;
+;    |acumulador:decMinuto|                    ; 45 (3)              ; 32 (32)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Relogio|acumulador:decMinuto                                                                                                               ; acumulador          ; work         ;
+;       |ULA:accULA|                           ; 42 (42)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Relogio|acumulador:decMinuto|ULA:accULA                                                                                                    ; ULA                 ; work         ;
+;    |acumulador:decSegundo|                   ; 48 (5)              ; 32 (32)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Relogio|acumulador:decSegundo                                                                                                              ; acumulador          ; work         ;
+;       |ULA:accULA|                           ; 43 (43)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Relogio|acumulador:decSegundo|ULA:accULA                                                                                                   ; ULA                 ; work         ;
+;    |acumulador:hora|                         ; 13 (2)              ; 32 (32)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Relogio|acumulador:hora                                                                                                                    ; acumulador          ; work         ;
+;       |ULA:accULA|                           ; 11 (11)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Relogio|acumulador:hora|ULA:accULA                                                                                                         ; ULA                 ; work         ;
+;    |acumulador:minuto|                       ; 46 (3)              ; 32 (32)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Relogio|acumulador:minuto                                                                                                                  ; acumulador          ; work         ;
+;       |ULA:accULA|                           ; 43 (43)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Relogio|acumulador:minuto|ULA:accULA                                                                                                       ; ULA                 ; work         ;
+;    |acumulador:segundo|                      ; 46 (3)              ; 32 (32)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Relogio|acumulador:segundo                                                                                                                 ; acumulador          ; work         ;
+;       |ULA:accULA|                           ; 43 (43)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Relogio|acumulador:segundo|ULA:accULA                                                                                                      ; ULA                 ; work         ;
+;    |acumulador:speedFactor|                  ; 45 (3)              ; 32 (32)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Relogio|acumulador:speedFactor                                                                                                             ; acumulador          ; work         ;
+;       |ULA:accULA|                           ; 42 (42)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Relogio|acumulador:speedFactor|ULA:accULA                                                                                                  ; ULA                 ; work         ;
+;    |conversorHex7Seg:A6|                     ; 7 (7)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Relogio|conversorHex7Seg:A6                                                                                                                ; conversorHex7Seg    ; work         ;
+;    |conversorHex7Seg:A7|                     ; 7 (7)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Relogio|conversorHex7Seg:A7                                                                                                                ; conversorHex7Seg    ; work         ;
+;    |conversorHex7Seg:A8|                     ; 7 (7)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Relogio|conversorHex7Seg:A8                                                                                                                ; conversorHex7Seg    ; work         ;
+;    |conversorHex7Seg:A9|                     ; 7 (7)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Relogio|conversorHex7Seg:A9                                                                                                                ; conversorHex7Seg    ; work         ;
+;    |conversorHex7Seg:outputSpeed|            ; 7 (7)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Relogio|conversorHex7Seg:outputSpeed                                                                                                       ; conversorHex7Seg    ; work         ;
+;    |debouncer:debounceIncrement|             ; 1 (1)               ; 1 (1)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Relogio|debouncer:debounceIncrement                                                                                                        ; debouncer           ; work         ;
+;    |debouncer:debounceOption|                ; 1 (1)               ; 1 (1)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Relogio|debouncer:debounceOption                                                                                                           ; debouncer           ; work         ;
+;    |debouncer:debounceSpeed|                 ; 1 (1)               ; 1 (1)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Relogio|debouncer:debounceSpeed                                                                                                            ; debouncer           ; work         ;
+;    |hourDecoder:outputHour|                  ; 5789 (1)            ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Relogio|hourDecoder:outputHour                                                                                                             ; hourDecoder         ; work         ;
+;       |ULA:hourULA|                          ; 5774 (48)           ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Relogio|hourDecoder:outputHour|ULA:hourULA                                                                                                 ; ULA                 ; work         ;
+;          |lpm_divide:Div0|                   ; 364 (0)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Relogio|hourDecoder:outputHour|ULA:hourULA|lpm_divide:Div0                                                                                 ; lpm_divide          ; work         ;
+;             |lpm_divide_0jm:auto_generated|  ; 364 (0)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Relogio|hourDecoder:outputHour|ULA:hourULA|lpm_divide:Div0|lpm_divide_0jm:auto_generated                                                   ; lpm_divide_0jm      ; work         ;
+;                |sign_div_unsign_olh:divider| ; 364 (0)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Relogio|hourDecoder:outputHour|ULA:hourULA|lpm_divide:Div0|lpm_divide_0jm:auto_generated|sign_div_unsign_olh:divider                       ; sign_div_unsign_olh ; work         ;
+;                   |alt_u_div_47f:divider|    ; 364 (364)           ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Relogio|hourDecoder:outputHour|ULA:hourULA|lpm_divide:Div0|lpm_divide_0jm:auto_generated|sign_div_unsign_olh:divider|alt_u_div_47f:divider ; alt_u_div_47f       ; work         ;
+;          |lpm_divide:Div1|                   ; 396 (0)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Relogio|hourDecoder:outputHour|ULA:hourULA|lpm_divide:Div1                                                                                 ; lpm_divide          ; work         ;
+;             |lpm_divide_0jm:auto_generated|  ; 396 (0)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Relogio|hourDecoder:outputHour|ULA:hourULA|lpm_divide:Div1|lpm_divide_0jm:auto_generated                                                   ; lpm_divide_0jm      ; work         ;
+;                |sign_div_unsign_olh:divider| ; 396 (0)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Relogio|hourDecoder:outputHour|ULA:hourULA|lpm_divide:Div1|lpm_divide_0jm:auto_generated|sign_div_unsign_olh:divider                       ; sign_div_unsign_olh ; work         ;
+;                   |alt_u_div_47f:divider|    ; 396 (396)           ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Relogio|hourDecoder:outputHour|ULA:hourULA|lpm_divide:Div1|lpm_divide_0jm:auto_generated|sign_div_unsign_olh:divider|alt_u_div_47f:divider ; alt_u_div_47f       ; work         ;
+;          |lpm_divide:Div2|                   ; 368 (0)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Relogio|hourDecoder:outputHour|ULA:hourULA|lpm_divide:Div2                                                                                 ; lpm_divide          ; work         ;
+;             |lpm_divide_0jm:auto_generated|  ; 368 (0)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Relogio|hourDecoder:outputHour|ULA:hourULA|lpm_divide:Div2|lpm_divide_0jm:auto_generated                                                   ; lpm_divide_0jm      ; work         ;
+;                |sign_div_unsign_olh:divider| ; 368 (0)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Relogio|hourDecoder:outputHour|ULA:hourULA|lpm_divide:Div2|lpm_divide_0jm:auto_generated|sign_div_unsign_olh:divider                       ; sign_div_unsign_olh ; work         ;
+;                   |alt_u_div_47f:divider|    ; 368 (368)           ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Relogio|hourDecoder:outputHour|ULA:hourULA|lpm_divide:Div2|lpm_divide_0jm:auto_generated|sign_div_unsign_olh:divider|alt_u_div_47f:divider ; alt_u_div_47f       ; work         ;
+;          |lpm_divide:Mod0|                   ; 1565 (0)            ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Relogio|hourDecoder:outputHour|ULA:hourULA|lpm_divide:Mod0                                                                                 ; lpm_divide          ; work         ;
+;             |lpm_divide_kcm:auto_generated|  ; 1565 (0)            ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Relogio|hourDecoder:outputHour|ULA:hourULA|lpm_divide:Mod0|lpm_divide_kcm:auto_generated                                                   ; lpm_divide_kcm      ; work         ;
+;                |sign_div_unsign_9nh:divider| ; 1565 (0)            ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Relogio|hourDecoder:outputHour|ULA:hourULA|lpm_divide:Mod0|lpm_divide_kcm:auto_generated|sign_div_unsign_9nh:divider                       ; sign_div_unsign_9nh ; work         ;
+;                   |alt_u_div_6af:divider|    ; 1565 (1565)         ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Relogio|hourDecoder:outputHour|ULA:hourULA|lpm_divide:Mod0|lpm_divide_kcm:auto_generated|sign_div_unsign_9nh:divider|alt_u_div_6af:divider ; alt_u_div_6af       ; work         ;
+;          |lpm_divide:Mod1|                   ; 1531 (0)            ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Relogio|hourDecoder:outputHour|ULA:hourULA|lpm_divide:Mod1                                                                                 ; lpm_divide          ; work         ;
+;             |lpm_divide_kcm:auto_generated|  ; 1531 (0)            ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Relogio|hourDecoder:outputHour|ULA:hourULA|lpm_divide:Mod1|lpm_divide_kcm:auto_generated                                                   ; lpm_divide_kcm      ; work         ;
+;                |sign_div_unsign_9nh:divider| ; 1531 (0)            ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Relogio|hourDecoder:outputHour|ULA:hourULA|lpm_divide:Mod1|lpm_divide_kcm:auto_generated|sign_div_unsign_9nh:divider                       ; sign_div_unsign_9nh ; work         ;
+;                   |alt_u_div_6af:divider|    ; 1531 (1531)         ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Relogio|hourDecoder:outputHour|ULA:hourULA|lpm_divide:Mod1|lpm_divide_kcm:auto_generated|sign_div_unsign_9nh:divider|alt_u_div_6af:divider ; alt_u_div_6af       ; work         ;
+;          |lpm_divide:Mod2|                   ; 1502 (0)            ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Relogio|hourDecoder:outputHour|ULA:hourULA|lpm_divide:Mod2                                                                                 ; lpm_divide          ; work         ;
+;             |lpm_divide_kcm:auto_generated|  ; 1502 (0)            ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Relogio|hourDecoder:outputHour|ULA:hourULA|lpm_divide:Mod2|lpm_divide_kcm:auto_generated                                                   ; lpm_divide_kcm      ; work         ;
+;                |sign_div_unsign_9nh:divider| ; 1502 (0)            ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Relogio|hourDecoder:outputHour|ULA:hourULA|lpm_divide:Mod2|lpm_divide_kcm:auto_generated|sign_div_unsign_9nh:divider                       ; sign_div_unsign_9nh ; work         ;
+;                   |alt_u_div_6af:divider|    ; 1502 (1502)         ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Relogio|hourDecoder:outputHour|ULA:hourULA|lpm_divide:Mod2|lpm_divide_kcm:auto_generated|sign_div_unsign_9nh:divider|alt_u_div_6af:divider ; alt_u_div_6af       ; work         ;
+;       |conversorHex7Seg:outputDecHour|       ; 7 (7)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Relogio|hourDecoder:outputHour|conversorHex7Seg:outputDecHour                                                                              ; conversorHex7Seg    ; work         ;
+;       |conversorHex7Seg:outputUnitHour|      ; 7 (7)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Relogio|hourDecoder:outputHour|conversorHex7Seg:outputUnitHour                                                                             ; conversorHex7Seg    ; work         ;
+;    |menu_controller:menuControl|             ; 6 (6)               ; 6 (6)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Relogio|menu_controller:menuControl                                                                                                        ; menu_controller     ; work         ;
+;    |pulsoDivisor:pulsoBlink|                 ; 51 (9)              ; 33 (33)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Relogio|pulsoDivisor:pulsoBlink                                                                                                            ; pulsoDivisor        ; work         ;
+;       |ULA:B0|                               ; 42 (42)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Relogio|pulsoDivisor:pulsoBlink|ULA:B0                                                                                                     ; ULA                 ; work         ;
+;    |pulsoDivisor:pulsoDecMinuto|             ; 45 (3)              ; 33 (33)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Relogio|pulsoDivisor:pulsoDecMinuto                                                                                                        ; pulsoDivisor        ; work         ;
+;       |ULA:B0|                               ; 42 (42)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Relogio|pulsoDivisor:pulsoDecMinuto|ULA:B0                                                                                                 ; ULA                 ; work         ;
+;    |pulsoDivisor:pulsoDecSegundo|            ; 47 (5)              ; 33 (33)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Relogio|pulsoDivisor:pulsoDecSegundo                                                                                                       ; pulsoDivisor        ; work         ;
+;       |ULA:B0|                               ; 42 (42)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Relogio|pulsoDivisor:pulsoDecSegundo|ULA:B0                                                                                                ; ULA                 ; work         ;
+;    |pulsoDivisor:pulsoHora|                  ; 45 (3)              ; 33 (33)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Relogio|pulsoDivisor:pulsoHora                                                                                                             ; pulsoDivisor        ; work         ;
+;       |ULA:B0|                               ; 42 (42)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Relogio|pulsoDivisor:pulsoHora|ULA:B0                                                                                                      ; ULA                 ; work         ;
+;    |pulsoDivisor:pulsoMinuto|                ; 45 (3)              ; 33 (33)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Relogio|pulsoDivisor:pulsoMinuto                                                                                                           ; pulsoDivisor        ; work         ;
+;       |ULA:B0|                               ; 42 (42)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Relogio|pulsoDivisor:pulsoMinuto|ULA:B0                                                                                                    ; ULA                 ; work         ;
+;    |pulsoDivisor:pulsoSegundo|               ; 84 (63)             ; 60 (60)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Relogio|pulsoDivisor:pulsoSegundo                                                                                                          ; pulsoDivisor        ; work         ;
+;       |ULA:B0|                               ; 21 (21)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Relogio|pulsoDivisor:pulsoSegundo|ULA:B0                                                                                                   ; ULA                 ; work         ;
++----------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+---------------------------------------------------------------------------------------------------------------------------------------------+---------------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
++-------------------------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                                              ;
++----------------------------------------------+--------------------------------------------------+
+; Register name                                ; Reason for Removal                               ;
++----------------------------------------------+--------------------------------------------------+
+; pulsoDivisor:pulsoHora|target[0,2..31]       ; Stuck at GND due to stuck port data_in           ;
+; pulsoDivisor:pulsoHora|target[1]             ; Stuck at VCC due to stuck port data_in           ;
+; pulsoDivisor:pulsoDecMinuto|target[0,3..31]  ; Stuck at GND due to stuck port data_in           ;
+; pulsoDivisor:pulsoDecMinuto|target[2]        ; Stuck at VCC due to stuck port data_in           ;
+; pulsoDivisor:pulsoDecMinuto|target[1]        ; Stuck at GND due to stuck port data_in           ;
+; pulsoDivisor:pulsoMinuto|target[0,2..31]     ; Stuck at GND due to stuck port data_in           ;
+; pulsoDivisor:pulsoMinuto|target[1]           ; Stuck at VCC due to stuck port data_in           ;
+; pulsoDivisor:pulsoDecSegundo|target[0,3..31] ; Stuck at GND due to stuck port data_in           ;
+; pulsoDivisor:pulsoDecSegundo|target[2]       ; Stuck at VCC due to stuck port data_in           ;
+; pulsoDivisor:pulsoDecSegundo|target[1]       ; Stuck at GND due to stuck port data_in           ;
+; pulsoDivisor:pulsoBlink|target[0]            ; Stuck at VCC due to stuck port data_in           ;
+; pulsoDivisor:pulsoBlink|target[23..31]       ; Stuck at GND due to stuck port data_in           ;
+; pulsoDivisor:pulsoBlink|target[22]           ; Stuck at VCC due to stuck port data_in           ;
+; pulsoDivisor:pulsoBlink|target[20,21]        ; Stuck at GND due to stuck port data_in           ;
+; pulsoDivisor:pulsoBlink|target[18,19]        ; Stuck at VCC due to stuck port data_in           ;
+; pulsoDivisor:pulsoBlink|target[15..17]       ; Stuck at GND due to stuck port data_in           ;
+; pulsoDivisor:pulsoBlink|target[14]           ; Stuck at VCC due to stuck port data_in           ;
+; pulsoDivisor:pulsoBlink|target[12,13]        ; Stuck at GND due to stuck port data_in           ;
+; pulsoDivisor:pulsoBlink|target[11]           ; Stuck at VCC due to stuck port data_in           ;
+; pulsoDivisor:pulsoBlink|target[10]           ; Stuck at GND due to stuck port data_in           ;
+; pulsoDivisor:pulsoBlink|target[8,9]          ; Stuck at VCC due to stuck port data_in           ;
+; pulsoDivisor:pulsoBlink|target[6,7]          ; Stuck at GND due to stuck port data_in           ;
+; pulsoDivisor:pulsoBlink|target[1..5]         ; Stuck at VCC due to stuck port data_in           ;
+; pulsoDivisor:pulsoSegundo|target[27..31]     ; Merged with pulsoDivisor:pulsoSegundo|target[26] ;
+; Total Number of Removed Registers = 165      ;                                                  ;
++----------------------------------------------+--------------------------------------------------+
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 458   ;
+; Number of registers using Synchronous Clear  ; 32    ;
+; Number of registers using Synchronous Load   ; 0     ;
+; Number of registers using Asynchronous Clear ; 426   ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 31    ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++--------------------------------------------------+
+; Inverted Register Statistics                     ;
++----------------------------------------+---------+
+; Inverted Register                      ; Fan out ;
++----------------------------------------+---------+
+; pulsoDivisor:pulsoBlink|clk_sec        ; 10      ;
+; pulsoDivisor:pulsoHora|clk_sec         ; 2       ;
+; pulsoDivisor:pulsoSegundo|clk_sec      ; 2       ;
+; pulsoDivisor:pulsoDecSegundo|clk_sec   ; 2       ;
+; pulsoDivisor:pulsoMinuto|clk_sec       ; 2       ;
+; pulsoDivisor:pulsoDecMinuto|clk_sec    ; 2       ;
+; Total number of inverted registers = 6 ;         ;
++----------------------------------------+---------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                 ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output       ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------+
+; 3:1                ; 5 bits    ; 10 LEs        ; 5 LEs                ; 5 LEs                  ; No         ; |Relogio|ULA:getFreq|ShiftRight0 ;
+; 4:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; No         ; |Relogio|ULA:getFreq|ShiftRight0 ;
+; 5:1                ; 2 bits    ; 6 LEs         ; 6 LEs                ; 0 LEs                  ; No         ; |Relogio|ULA:getFreq|ShiftRight0 ;
+; 5:1                ; 2 bits    ; 6 LEs         ; 4 LEs                ; 2 LEs                  ; No         ; |Relogio|ULA:getFreq|ShiftRight0 ;
+; 5:1                ; 2 bits    ; 6 LEs         ; 6 LEs                ; 0 LEs                  ; No         ; |Relogio|ULA:getFreq|ShiftRight0 ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------+
+
+
++-------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: Top-level Entity: |Relogio ;
++----------------+----------------------------------+---------------------+
+; Parameter Name ; Value                            ; Type                ;
++----------------+----------------------------------+---------------------+
+; FREQFPGA       ; 00000010111110101111000010000000 ; Unsigned Binary     ;
+; FREQBLINK      ; 00000000100110001001011010000000 ; Unsigned Binary     ;
+; SEC            ; 00000000000000000000000000000001 ; Unsigned Binary     ;
+; DECSEC         ; 00000000000000000000000000001010 ; Unsigned Binary     ;
+; MIN            ; 00000000000000000000000000000110 ; Unsigned Binary     ;
+; DECMIN         ; 00000000000000000000000000001010 ; Unsigned Binary     ;
+; HOUR           ; 00000000000000000000000000000110 ; Unsigned Binary     ;
++----------------+----------------------------------+---------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: pulsoDivisor:pulsoBlink ;
++----------------+-------+---------------------------------------------+
+; Parameter Name ; Value ; Type                                        ;
++----------------+-------+---------------------------------------------+
+; wordsize       ; 32    ; Signed Integer                              ;
++----------------+-------+---------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: acumulador:speedFactor ;
++----------------+-------+--------------------------------------------+
+; Parameter Name ; Value ; Type                                       ;
++----------------+-------+--------------------------------------------+
+; wordsize       ; 32    ; Signed Integer                             ;
+; maxval         ; 9     ; Signed Integer                             ;
++----------------+-------+--------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: pulsoDivisor:pulsoSegundo ;
++----------------+-------+-----------------------------------------------+
+; Parameter Name ; Value ; Type                                          ;
++----------------+-------+-----------------------------------------------+
+; wordsize       ; 32    ; Signed Integer                                ;
++----------------+-------+-----------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: pulsoDivisor:pulsoDecSegundo ;
++----------------+-------+--------------------------------------------------+
+; Parameter Name ; Value ; Type                                             ;
++----------------+-------+--------------------------------------------------+
+; wordsize       ; 32    ; Signed Integer                                   ;
++----------------+-------+--------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: pulsoDivisor:pulsoMinuto ;
++----------------+-------+----------------------------------------------+
+; Parameter Name ; Value ; Type                                         ;
++----------------+-------+----------------------------------------------+
+; wordsize       ; 32    ; Signed Integer                               ;
++----------------+-------+----------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: pulsoDivisor:pulsoDecMinuto ;
++----------------+-------+-------------------------------------------------+
+; Parameter Name ; Value ; Type                                            ;
++----------------+-------+-------------------------------------------------+
+; wordsize       ; 32    ; Signed Integer                                  ;
++----------------+-------+-------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: pulsoDivisor:pulsoHora ;
++----------------+-------+--------------------------------------------+
+; Parameter Name ; Value ; Type                                       ;
++----------------+-------+--------------------------------------------+
+; wordsize       ; 32    ; Signed Integer                             ;
++----------------+-------+--------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: acumulador:controlOption ;
++----------------+-------+----------------------------------------------+
+; Parameter Name ; Value ; Type                                         ;
++----------------+-------+----------------------------------------------+
+; wordsize       ; 32    ; Signed Integer                               ;
+; maxval         ; 5     ; Signed Integer                               ;
++----------------+-------+----------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: acumulador:segundo ;
++----------------+-------+----------------------------------------+
+; Parameter Name ; Value ; Type                                   ;
++----------------+-------+----------------------------------------+
+; wordsize       ; 32    ; Signed Integer                         ;
+; maxval         ; 9     ; Signed Integer                         ;
++----------------+-------+----------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: acumulador:decSegundo ;
++----------------+-------+-------------------------------------------+
+; Parameter Name ; Value ; Type                                      ;
++----------------+-------+-------------------------------------------+
+; wordsize       ; 32    ; Signed Integer                            ;
+; maxval         ; 5     ; Signed Integer                            ;
++----------------+-------+-------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: acumulador:minuto ;
++----------------+-------+---------------------------------------+
+; Parameter Name ; Value ; Type                                  ;
++----------------+-------+---------------------------------------+
+; wordsize       ; 32    ; Signed Integer                        ;
+; maxval         ; 9     ; Signed Integer                        ;
++----------------+-------+---------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: acumulador:decMinuto ;
++----------------+-------+------------------------------------------+
+; Parameter Name ; Value ; Type                                     ;
++----------------+-------+------------------------------------------+
+; wordsize       ; 32    ; Signed Integer                           ;
+; maxval         ; 5     ; Signed Integer                           ;
++----------------+-------+------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: acumulador:hora ;
++----------------+-------+-------------------------------------+
+; Parameter Name ; Value ; Type                                ;
++----------------+-------+-------------------------------------+
+; wordsize       ; 32    ; Signed Integer                      ;
+; maxval         ; 23    ; Signed Integer                      ;
++----------------+-------+-------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: hourDecoder:outputHour ;
++----------------+-------+--------------------------------------------+
+; Parameter Name ; Value ; Type                                       ;
++----------------+-------+--------------------------------------------+
+; wordsize       ; 32    ; Signed Integer                             ;
+; ledsize        ; 4     ; Signed Integer                             ;
++----------------+-------+--------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: hourDecoder:outputHour|ULA:hourULA|lpm_divide:Div0 ;
++------------------------+----------------+-----------------------------------------------------------+
+; Parameter Name         ; Value          ; Type                                                      ;
++------------------------+----------------+-----------------------------------------------------------+
+; LPM_WIDTHN             ; 32             ; Untyped                                                   ;
+; LPM_WIDTHD             ; 4              ; Untyped                                                   ;
+; LPM_NREPRESENTATION    ; UNSIGNED       ; Untyped                                                   ;
+; LPM_DREPRESENTATION    ; UNSIGNED       ; Untyped                                                   ;
+; LPM_PIPELINE           ; 0              ; Untyped                                                   ;
+; LPM_REMAINDERPOSITIVE  ; TRUE           ; Untyped                                                   ;
+; MAXIMIZE_SPEED         ; 5              ; Untyped                                                   ;
+; CBXI_PARAMETER         ; lpm_divide_0jm ; Untyped                                                   ;
+; CARRY_CHAIN            ; MANUAL         ; Untyped                                                   ;
+; OPTIMIZE_FOR_SPEED     ; 5              ; Untyped                                                   ;
+; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY                                                ;
+; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY                                              ;
+; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE                                              ;
+; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE                                            ;
++------------------------+----------------+-----------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: hourDecoder:outputHour|ULA:hourULA|lpm_divide:Mod2 ;
++------------------------+----------------+-----------------------------------------------------------+
+; Parameter Name         ; Value          ; Type                                                      ;
++------------------------+----------------+-----------------------------------------------------------+
+; LPM_WIDTHN             ; 32             ; Untyped                                                   ;
+; LPM_WIDTHD             ; 32             ; Untyped                                                   ;
+; LPM_NREPRESENTATION    ; UNSIGNED       ; Untyped                                                   ;
+; LPM_DREPRESENTATION    ; UNSIGNED       ; Untyped                                                   ;
+; LPM_PIPELINE           ; 0              ; Untyped                                                   ;
+; LPM_REMAINDERPOSITIVE  ; TRUE           ; Untyped                                                   ;
+; MAXIMIZE_SPEED         ; 5              ; Untyped                                                   ;
+; CBXI_PARAMETER         ; lpm_divide_kcm ; Untyped                                                   ;
+; CARRY_CHAIN            ; MANUAL         ; Untyped                                                   ;
+; OPTIMIZE_FOR_SPEED     ; 5              ; Untyped                                                   ;
+; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY                                                ;
+; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY                                              ;
+; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE                                              ;
+; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE                                            ;
++------------------------+----------------+-----------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: hourDecoder:outputHour|ULA:hourULA|lpm_divide:Mod0 ;
++------------------------+----------------+-----------------------------------------------------------+
+; Parameter Name         ; Value          ; Type                                                      ;
++------------------------+----------------+-----------------------------------------------------------+
+; LPM_WIDTHN             ; 32             ; Untyped                                                   ;
+; LPM_WIDTHD             ; 32             ; Untyped                                                   ;
+; LPM_NREPRESENTATION    ; UNSIGNED       ; Untyped                                                   ;
+; LPM_DREPRESENTATION    ; UNSIGNED       ; Untyped                                                   ;
+; LPM_PIPELINE           ; 0              ; Untyped                                                   ;
+; LPM_REMAINDERPOSITIVE  ; TRUE           ; Untyped                                                   ;
+; MAXIMIZE_SPEED         ; 5              ; Untyped                                                   ;
+; CBXI_PARAMETER         ; lpm_divide_kcm ; Untyped                                                   ;
+; CARRY_CHAIN            ; MANUAL         ; Untyped                                                   ;
+; OPTIMIZE_FOR_SPEED     ; 5              ; Untyped                                                   ;
+; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY                                                ;
+; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY                                              ;
+; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE                                              ;
+; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE                                            ;
++------------------------+----------------+-----------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: hourDecoder:outputHour|ULA:hourULA|lpm_divide:Mod1 ;
++------------------------+----------------+-----------------------------------------------------------+
+; Parameter Name         ; Value          ; Type                                                      ;
++------------------------+----------------+-----------------------------------------------------------+
+; LPM_WIDTHN             ; 32             ; Untyped                                                   ;
+; LPM_WIDTHD             ; 32             ; Untyped                                                   ;
+; LPM_NREPRESENTATION    ; UNSIGNED       ; Untyped                                                   ;
+; LPM_DREPRESENTATION    ; UNSIGNED       ; Untyped                                                   ;
+; LPM_PIPELINE           ; 0              ; Untyped                                                   ;
+; LPM_REMAINDERPOSITIVE  ; TRUE           ; Untyped                                                   ;
+; MAXIMIZE_SPEED         ; 5              ; Untyped                                                   ;
+; CBXI_PARAMETER         ; lpm_divide_kcm ; Untyped                                                   ;
+; CARRY_CHAIN            ; MANUAL         ; Untyped                                                   ;
+; OPTIMIZE_FOR_SPEED     ; 5              ; Untyped                                                   ;
+; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY                                                ;
+; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY                                              ;
+; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE                                              ;
+; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE                                            ;
++------------------------+----------------+-----------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: hourDecoder:outputHour|ULA:hourULA|lpm_divide:Div2 ;
++------------------------+----------------+-----------------------------------------------------------+
+; Parameter Name         ; Value          ; Type                                                      ;
++------------------------+----------------+-----------------------------------------------------------+
+; LPM_WIDTHN             ; 32             ; Untyped                                                   ;
+; LPM_WIDTHD             ; 4              ; Untyped                                                   ;
+; LPM_NREPRESENTATION    ; UNSIGNED       ; Untyped                                                   ;
+; LPM_DREPRESENTATION    ; UNSIGNED       ; Untyped                                                   ;
+; LPM_PIPELINE           ; 0              ; Untyped                                                   ;
+; LPM_REMAINDERPOSITIVE  ; TRUE           ; Untyped                                                   ;
+; MAXIMIZE_SPEED         ; 5              ; Untyped                                                   ;
+; CBXI_PARAMETER         ; lpm_divide_0jm ; Untyped                                                   ;
+; CARRY_CHAIN            ; MANUAL         ; Untyped                                                   ;
+; OPTIMIZE_FOR_SPEED     ; 5              ; Untyped                                                   ;
+; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY                                                ;
+; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY                                              ;
+; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE                                              ;
+; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE                                            ;
++------------------------+----------------+-----------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: hourDecoder:outputHour|ULA:hourULA|lpm_divide:Div1 ;
++------------------------+----------------+-----------------------------------------------------------+
+; Parameter Name         ; Value          ; Type                                                      ;
++------------------------+----------------+-----------------------------------------------------------+
+; LPM_WIDTHN             ; 32             ; Untyped                                                   ;
+; LPM_WIDTHD             ; 4              ; Untyped                                                   ;
+; LPM_NREPRESENTATION    ; UNSIGNED       ; Untyped                                                   ;
+; LPM_DREPRESENTATION    ; UNSIGNED       ; Untyped                                                   ;
+; LPM_PIPELINE           ; 0              ; Untyped                                                   ;
+; LPM_REMAINDERPOSITIVE  ; TRUE           ; Untyped                                                   ;
+; MAXIMIZE_SPEED         ; 5              ; Untyped                                                   ;
+; CBXI_PARAMETER         ; lpm_divide_0jm ; Untyped                                                   ;
+; CARRY_CHAIN            ; MANUAL         ; Untyped                                                   ;
+; OPTIMIZE_FOR_SPEED     ; 5              ; Untyped                                                   ;
+; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY                                                ;
+; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY                                              ;
+; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE                                              ;
+; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE                                            ;
++------------------------+----------------+-----------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "hourDecoder:outputHour|ULA:hourULA"                                                     ;
++----------+--------+----------+-------------------------------------------------------------------------------------+
+; Port     ; Type   ; Severity ; Details                                                                             ;
++----------+--------+----------+-------------------------------------------------------------------------------------+
+; b        ; Input  ; Info     ; Stuck at GND                                                                        ;
+; c[30..4] ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; d[31..4] ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++----------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++--------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "acumulador:hora|ULA:accULA"                                                             ;
++----------+--------+----------+-------------------------------------------------------------------------------------+
+; Port     ; Type   ; Severity ; Details                                                                             ;
++----------+--------+----------+-------------------------------------------------------------------------------------+
+; b[2..0]  ; Input  ; Info     ; Stuck at VCC                                                                        ;
+; b[31..5] ; Input  ; Info     ; Stuck at GND                                                                        ;
+; b[4]     ; Input  ; Info     ; Stuck at VCC                                                                        ;
+; b[3]     ; Input  ; Info     ; Stuck at GND                                                                        ;
+; sel      ; Input  ; Info     ; Stuck at VCC                                                                        ;
+; d[31..1] ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++----------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "acumulador:decMinuto"                                                                     ;
++------------+--------+----------+-------------------------------------------------------------------------------------+
+; Port       ; Type   ; Severity ; Details                                                                             ;
++------------+--------+----------+-------------------------------------------------------------------------------------+
+; mem[31..4] ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++------------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "acumulador:minuto"                                                                        ;
++------------+--------+----------+-------------------------------------------------------------------------------------+
+; Port       ; Type   ; Severity ; Details                                                                             ;
++------------+--------+----------+-------------------------------------------------------------------------------------+
+; mem[31..4] ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++------------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "acumulador:decSegundo"                                                                    ;
++------------+--------+----------+-------------------------------------------------------------------------------------+
+; Port       ; Type   ; Severity ; Details                                                                             ;
++------------+--------+----------+-------------------------------------------------------------------------------------+
+; mem[31..4] ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++------------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "acumulador:segundo"                                                                       ;
++------------+--------+----------+-------------------------------------------------------------------------------------+
+; Port       ; Type   ; Severity ; Details                                                                             ;
++------------+--------+----------+-------------------------------------------------------------------------------------+
+; mem[31..4] ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++------------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++-------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "menu_controller:menuControl"                                                           ;
++---------+--------+----------+-------------------------------------------------------------------------------------+
+; Port    ; Type   ; Severity ; Details                                                                             ;
++---------+--------+----------+-------------------------------------------------------------------------------------+
+; mask[0] ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++---------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++--------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "acumulador:controlOption|ULA:accULA"                                                    ;
++----------+--------+----------+-------------------------------------------------------------------------------------+
+; Port     ; Type   ; Severity ; Details                                                                             ;
++----------+--------+----------+-------------------------------------------------------------------------------------+
+; b[31..3] ; Input  ; Info     ; Stuck at GND                                                                        ;
+; b[2]     ; Input  ; Info     ; Stuck at VCC                                                                        ;
+; b[1]     ; Input  ; Info     ; Stuck at GND                                                                        ;
+; b[0]     ; Input  ; Info     ; Stuck at VCC                                                                        ;
+; sel      ; Input  ; Info     ; Stuck at VCC                                                                        ;
+; d[31..1] ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++----------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++----------------------------------------------------+
+; Port Connectivity Checks: "pulsoDivisor:pulsoHora" ;
++------------------+-------+----------+--------------+
+; Port             ; Type  ; Severity ; Details      ;
++------------------+-------+----------+--------------+
+; divfactor[2..1]  ; Input ; Info     ; Stuck at VCC ;
+; divfactor[31..3] ; Input ; Info     ; Stuck at GND ;
+; divfactor[0]     ; Input ; Info     ; Stuck at GND ;
++------------------+-------+----------+--------------+
+
+
++---------------------------------------------------------+
+; Port Connectivity Checks: "pulsoDivisor:pulsoDecMinuto" ;
++------------------+-------+----------+-------------------+
+; Port             ; Type  ; Severity ; Details           ;
++------------------+-------+----------+-------------------+
+; divfactor[31..4] ; Input ; Info     ; Stuck at GND      ;
+; divfactor[3]     ; Input ; Info     ; Stuck at VCC      ;
+; divfactor[2]     ; Input ; Info     ; Stuck at GND      ;
+; divfactor[1]     ; Input ; Info     ; Stuck at VCC      ;
+; divfactor[0]     ; Input ; Info     ; Stuck at GND      ;
++------------------+-------+----------+-------------------+
+
+
++------------------------------------------------------+
+; Port Connectivity Checks: "pulsoDivisor:pulsoMinuto" ;
++------------------+-------+----------+----------------+
+; Port             ; Type  ; Severity ; Details        ;
++------------------+-------+----------+----------------+
+; divfactor[2..1]  ; Input ; Info     ; Stuck at VCC   ;
+; divfactor[31..3] ; Input ; Info     ; Stuck at GND   ;
+; divfactor[0]     ; Input ; Info     ; Stuck at GND   ;
++------------------+-------+----------+----------------+
+
+
++----------------------------------------------------------+
+; Port Connectivity Checks: "pulsoDivisor:pulsoDecSegundo" ;
++------------------+-------+----------+--------------------+
+; Port             ; Type  ; Severity ; Details            ;
++------------------+-------+----------+--------------------+
+; divfactor[31..4] ; Input ; Info     ; Stuck at GND       ;
+; divfactor[3]     ; Input ; Info     ; Stuck at VCC       ;
+; divfactor[2]     ; Input ; Info     ; Stuck at GND       ;
+; divfactor[1]     ; Input ; Info     ; Stuck at VCC       ;
+; divfactor[0]     ; Input ; Info     ; Stuck at GND       ;
++------------------+-------+----------+--------------------+
+
+
++---------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "ULA:getFreq"                                                                             ;
++-----------+--------+----------+-------------------------------------------------------------------------------------+
+; Port      ; Type   ; Severity ; Details                                                                             ;
++-----------+--------+----------+-------------------------------------------------------------------------------------+
+; a[23..19] ; Input  ; Info     ; Stuck at VCC                                                                        ;
+; a[15..12] ; Input  ; Info     ; Stuck at VCC                                                                        ;
+; a[31..26] ; Input  ; Info     ; Stuck at GND                                                                        ;
+; a[11..8]  ; Input  ; Info     ; Stuck at GND                                                                        ;
+; a[6..0]   ; Input  ; Info     ; Stuck at GND                                                                        ;
+; a[25]     ; Input  ; Info     ; Stuck at VCC                                                                        ;
+; a[24]     ; Input  ; Info     ; Stuck at GND                                                                        ;
+; a[18]     ; Input  ; Info     ; Stuck at GND                                                                        ;
+; a[17]     ; Input  ; Info     ; Stuck at VCC                                                                        ;
+; a[16]     ; Input  ; Info     ; Stuck at GND                                                                        ;
+; a[7]      ; Input  ; Info     ; Stuck at VCC                                                                        ;
+; sel       ; Input  ; Info     ; Stuck at GND                                                                        ;
+; d         ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++-----------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++--------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "acumulador:speedFactor|ULA:accULA"                                                      ;
++----------+--------+----------+-------------------------------------------------------------------------------------+
+; Port     ; Type   ; Severity ; Details                                                                             ;
++----------+--------+----------+-------------------------------------------------------------------------------------+
+; b[31..4] ; Input  ; Info     ; Stuck at GND                                                                        ;
+; b[2..1]  ; Input  ; Info     ; Stuck at GND                                                                        ;
+; b[3]     ; Input  ; Info     ; Stuck at VCC                                                                        ;
+; b[0]     ; Input  ; Info     ; Stuck at VCC                                                                        ;
+; sel      ; Input  ; Info     ; Stuck at VCC                                                                        ;
+; d[31..1] ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++----------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++--------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "pulsoDivisor:pulsoBlink|ULA:B0"                                                         ;
++----------+--------+----------+-------------------------------------------------------------------------------------+
+; Port     ; Type   ; Severity ; Details                                                                             ;
++----------+--------+----------+-------------------------------------------------------------------------------------+
+; sel      ; Input  ; Info     ; Stuck at VCC                                                                        ;
+; d[31..1] ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++----------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++-----------------------------------------------------+
+; Port Connectivity Checks: "pulsoDivisor:pulsoBlink" ;
++-------------------+-------+----------+--------------+
+; Port              ; Type  ; Severity ; Details      ;
++-------------------+-------+----------+--------------+
+; divfactor[20..19] ; Input ; Info     ; Stuck at VCC ;
+; divfactor[10..9]  ; Input ; Info     ; Stuck at VCC ;
+; divfactor[31..24] ; Input ; Info     ; Stuck at GND ;
+; divfactor[22..21] ; Input ; Info     ; Stuck at GND ;
+; divfactor[18..16] ; Input ; Info     ; Stuck at GND ;
+; divfactor[14..13] ; Input ; Info     ; Stuck at GND ;
+; divfactor[6..0]   ; Input ; Info     ; Stuck at GND ;
+; divfactor[23]     ; Input ; Info     ; Stuck at VCC ;
+; divfactor[15]     ; Input ; Info     ; Stuck at VCC ;
+; divfactor[12]     ; Input ; Info     ; Stuck at VCC ;
+; divfactor[11]     ; Input ; Info     ; Stuck at GND ;
+; divfactor[8]      ; Input ; Info     ; Stuck at GND ;
+; divfactor[7]      ; Input ; Info     ; Stuck at VCC ;
++-------------------+-------+----------+--------------+
+
+
++-----------------------------------------------------+
+; Post-Synthesis Netlist Statistics for Top Partition ;
++-----------------------+-----------------------------+
+; Type                  ; Count                       ;
++-----------------------+-----------------------------+
+; boundary_port         ; 79                          ;
+; cycloneiii_ff         ; 458                         ;
+;     CLR               ; 394                         ;
+;     CLR SCLR          ; 32                          ;
+;     ENA               ; 31                          ;
+;     plain             ; 1                           ;
+; cycloneiii_lcell_comb ; 6534                        ;
+;     arith             ; 2195                        ;
+;         1 data inputs ; 1                           ;
+;         2 data inputs ; 413                         ;
+;         3 data inputs ; 1781                        ;
+;     normal            ; 4339                        ;
+;         0 data inputs ; 176                         ;
+;         1 data inputs ; 19                          ;
+;         2 data inputs ; 2252                        ;
+;         3 data inputs ; 41                          ;
+;         4 data inputs ; 1851                        ;
+;                       ;                             ;
+; Max LUT depth         ; 214.70                      ;
+; Average LUT depth     ; 136.51                      ;
++-----------------------+-----------------------------+
+
+
++-------------------------------+
+; Elapsed Time Per Partition    ;
++----------------+--------------+
+; Partition Name ; Elapsed Time ;
++----------------+--------------+
+; Top            ; 00:00:10     ;
++----------------+--------------+
+
+
++-------------------------------+
+; Analysis & Synthesis Messages ;
++-------------------------------+
+Info: *******************************************************************
+Info: Running Quartus Prime Analysis & Synthesis
+    Info: Version 18.0.0 Build 614 04/24/2018 SJ Lite Edition
+    Info: Processing started: Wed Oct 03 00:39:51 2018
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off FPGA_TEST -c FPGA_TEST
+Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
+Info (20030): Parallel compilation is enabled and will use 2 of the 2 processors detected
+Info (12021): Found 2 design units, including 1 entities, in source file hourdecoder.vhd
+    Info (12022): Found design unit 1: hourDecoder-decode File: C:/intelFPGA_lite/18.0/RelogioProj/test/hourDecoder.vhd Line: 22
+    Info (12023): Found entity 1: hourDecoder File: C:/intelFPGA_lite/18.0/RelogioProj/test/hourDecoder.vhd Line: 5
+Info (12021): Found 2 design units, including 1 entities, in source file acumulador.vhd
+    Info (12022): Found design unit 1: acumulador-update File: C:/intelFPGA_lite/18.0/RelogioProj/test/acumulador.vhd Line: 20
+    Info (12023): Found entity 1: acumulador File: C:/intelFPGA_lite/18.0/RelogioProj/test/acumulador.vhd Line: 5
+Info (12021): Found 2 design units, including 1 entities, in source file pulsodivisor.vhd
+    Info (12022): Found design unit 1: pulsoDivisor-pulso File: C:/intelFPGA_lite/18.0/RelogioProj/test/pulsoDivisor.vhd Line: 24
+    Info (12023): Found entity 1: pulsoDivisor File: C:/intelFPGA_lite/18.0/RelogioProj/test/pulsoDivisor.vhd Line: 5
+Info (12021): Found 2 design units, including 1 entities, in source file registrador.vhd
+    Info (12022): Found design unit 1: registrador-comportamento File: C:/intelFPGA_lite/18.0/RelogioProj/test/registrador.vhd Line: 16
+    Info (12023): Found entity 1: registrador File: C:/intelFPGA_lite/18.0/RelogioProj/test/registrador.vhd Line: 4
+Info (12021): Found 2 design units, including 1 entities, in source file fluxodados.vhd
+    Info (12022): Found design unit 1: fluxoDados-simples File: C:/intelFPGA_lite/18.0/RelogioProj/test/fluxoDados.vhd Line: 23
+    Info (12023): Found entity 1: fluxoDados File: C:/intelFPGA_lite/18.0/RelogioProj/test/fluxoDados.vhd Line: 5
+Info (12021): Found 2 design units, including 1 entities, in source file ula.vhd
+    Info (12022): Found design unit 1: ULA-comportamento File: C:/intelFPGA_lite/18.0/RelogioProj/test/ULA.vhd Line: 20
+    Info (12023): Found entity 1: ULA File: C:/intelFPGA_lite/18.0/RelogioProj/test/ULA.vhd Line: 5
+Info (12021): Found 2 design units, including 1 entities, in source file conversorhex7seg.vhd
+    Info (12022): Found design unit 1: conversorHex7Seg-comportamento File: C:/intelFPGA_lite/18.0/RelogioProj/test/conversorHex7Seg.vhd Line: 13
+    Info (12023): Found entity 1: conversorHex7Seg File: C:/intelFPGA_lite/18.0/RelogioProj/test/conversorHex7Seg.vhd Line: 5
+Info (12021): Found 2 design units, including 1 entities, in source file relogio.vhd
+    Info (12022): Found design unit 1: Relogio-main File: C:/intelFPGA_lite/18.0/RelogioProj/test/Relogio.vhd Line: 36
+    Info (12023): Found entity 1: Relogio File: C:/intelFPGA_lite/18.0/RelogioProj/test/Relogio.vhd Line: 5
+Info (12021): Found 2 design units, including 1 entities, in source file menu_controller.vhd
+    Info (12022): Found design unit 1: menu_controller-control File: C:/intelFPGA_lite/18.0/RelogioProj/test/menu_controller.vhd Line: 16
+    Info (12023): Found entity 1: menu_controller File: C:/intelFPGA_lite/18.0/RelogioProj/test/menu_controller.vhd Line: 5
+Info (12021): Found 1 design units, including 0 entities, in source file output_files/test_pkg.vhd
+    Info (12022): Found design unit 1: test_pkg File: C:/intelFPGA_lite/18.0/RelogioProj/test/output_files/test_pkg.vhd Line: 5
+Info (12021): Found 2 design units, including 1 entities, in source file debouncer.vhd
+    Info (12022): Found design unit 1: debouncer-debounce File: C:/intelFPGA_lite/18.0/RelogioProj/test/debouncer.vhd Line: 16
+    Info (12023): Found entity 1: debouncer File: C:/intelFPGA_lite/18.0/RelogioProj/test/debouncer.vhd Line: 5
+Info (12127): Elaborating entity "Relogio" for the top level hierarchy
+Warning (10540): VHDL Signal Declaration warning at Relogio.vhd(38): used explicit default value for signal "rst" because signal was never assigned a value File: C:/intelFPGA_lite/18.0/RelogioProj/test/Relogio.vhd Line: 38
+Warning (10540): VHDL Signal Declaration warning at Relogio.vhd(39): used explicit default value for signal "speed_select" because signal was never assigned a value File: C:/intelFPGA_lite/18.0/RelogioProj/test/Relogio.vhd Line: 39
+Warning (10540): VHDL Signal Declaration warning at Relogio.vhd(41): used explicit default value for signal "increment_select" because signal was never assigned a value File: C:/intelFPGA_lite/18.0/RelogioProj/test/Relogio.vhd Line: 41
+Warning (10540): VHDL Signal Declaration warning at Relogio.vhd(43): used explicit default value for signal "option_select" because signal was never assigned a value File: C:/intelFPGA_lite/18.0/RelogioProj/test/Relogio.vhd Line: 43
+Info (12128): Elaborating entity "pulsoDivisor" for hierarchy "pulsoDivisor:pulsoBlink" File: C:/intelFPGA_lite/18.0/RelogioProj/test/Relogio.vhd Line: 77
+Info (12128): Elaborating entity "ULA" for hierarchy "pulsoDivisor:pulsoBlink|ULA:B0" File: C:/intelFPGA_lite/18.0/RelogioProj/test/pulsoDivisor.vhd Line: 35
+Warning (10631): VHDL Process Statement warning at ULA.vhd(32): inferring latch(es) for signal or variable "d", which holds its previous value in one or more paths through the process File: C:/intelFPGA_lite/18.0/RelogioProj/test/ULA.vhd Line: 32
+Info (10041): Inferred latch for "d[1]" at ULA.vhd(32) File: C:/intelFPGA_lite/18.0/RelogioProj/test/ULA.vhd Line: 32
+Info (10041): Inferred latch for "d[2]" at ULA.vhd(32) File: C:/intelFPGA_lite/18.0/RelogioProj/test/ULA.vhd Line: 32
+Info (10041): Inferred latch for "d[3]" at ULA.vhd(32) File: C:/intelFPGA_lite/18.0/RelogioProj/test/ULA.vhd Line: 32
+Info (10041): Inferred latch for "d[4]" at ULA.vhd(32) File: C:/intelFPGA_lite/18.0/RelogioProj/test/ULA.vhd Line: 32
+Info (10041): Inferred latch for "d[5]" at ULA.vhd(32) File: C:/intelFPGA_lite/18.0/RelogioProj/test/ULA.vhd Line: 32
+Info (10041): Inferred latch for "d[6]" at ULA.vhd(32) File: C:/intelFPGA_lite/18.0/RelogioProj/test/ULA.vhd Line: 32
+Info (10041): Inferred latch for "d[7]" at ULA.vhd(32) File: C:/intelFPGA_lite/18.0/RelogioProj/test/ULA.vhd Line: 32
+Info (10041): Inferred latch for "d[8]" at ULA.vhd(32) File: C:/intelFPGA_lite/18.0/RelogioProj/test/ULA.vhd Line: 32
+Info (10041): Inferred latch for "d[9]" at ULA.vhd(32) File: C:/intelFPGA_lite/18.0/RelogioProj/test/ULA.vhd Line: 32
+Info (10041): Inferred latch for "d[10]" at ULA.vhd(32) File: C:/intelFPGA_lite/18.0/RelogioProj/test/ULA.vhd Line: 32
+Info (10041): Inferred latch for "d[11]" at ULA.vhd(32) File: C:/intelFPGA_lite/18.0/RelogioProj/test/ULA.vhd Line: 32
+Info (10041): Inferred latch for "d[12]" at ULA.vhd(32) File: C:/intelFPGA_lite/18.0/RelogioProj/test/ULA.vhd Line: 32
+Info (10041): Inferred latch for "d[13]" at ULA.vhd(32) File: C:/intelFPGA_lite/18.0/RelogioProj/test/ULA.vhd Line: 32
+Info (10041): Inferred latch for "d[14]" at ULA.vhd(32) File: C:/intelFPGA_lite/18.0/RelogioProj/test/ULA.vhd Line: 32
+Info (10041): Inferred latch for "d[15]" at ULA.vhd(32) File: C:/intelFPGA_lite/18.0/RelogioProj/test/ULA.vhd Line: 32
+Info (10041): Inferred latch for "d[16]" at ULA.vhd(32) File: C:/intelFPGA_lite/18.0/RelogioProj/test/ULA.vhd Line: 32
+Info (10041): Inferred latch for "d[17]" at ULA.vhd(32) File: C:/intelFPGA_lite/18.0/RelogioProj/test/ULA.vhd Line: 32
+Info (10041): Inferred latch for "d[18]" at ULA.vhd(32) File: C:/intelFPGA_lite/18.0/RelogioProj/test/ULA.vhd Line: 32
+Info (10041): Inferred latch for "d[19]" at ULA.vhd(32) File: C:/intelFPGA_lite/18.0/RelogioProj/test/ULA.vhd Line: 32
+Info (10041): Inferred latch for "d[20]" at ULA.vhd(32) File: C:/intelFPGA_lite/18.0/RelogioProj/test/ULA.vhd Line: 32
+Info (10041): Inferred latch for "d[21]" at ULA.vhd(32) File: C:/intelFPGA_lite/18.0/RelogioProj/test/ULA.vhd Line: 32
+Info (10041): Inferred latch for "d[22]" at ULA.vhd(32) File: C:/intelFPGA_lite/18.0/RelogioProj/test/ULA.vhd Line: 32
+Info (10041): Inferred latch for "d[23]" at ULA.vhd(32) File: C:/intelFPGA_lite/18.0/RelogioProj/test/ULA.vhd Line: 32
+Info (10041): Inferred latch for "d[24]" at ULA.vhd(32) File: C:/intelFPGA_lite/18.0/RelogioProj/test/ULA.vhd Line: 32
+Info (10041): Inferred latch for "d[25]" at ULA.vhd(32) File: C:/intelFPGA_lite/18.0/RelogioProj/test/ULA.vhd Line: 32
+Info (10041): Inferred latch for "d[26]" at ULA.vhd(32) File: C:/intelFPGA_lite/18.0/RelogioProj/test/ULA.vhd Line: 32
+Info (10041): Inferred latch for "d[27]" at ULA.vhd(32) File: C:/intelFPGA_lite/18.0/RelogioProj/test/ULA.vhd Line: 32
+Info (10041): Inferred latch for "d[28]" at ULA.vhd(32) File: C:/intelFPGA_lite/18.0/RelogioProj/test/ULA.vhd Line: 32
+Info (10041): Inferred latch for "d[29]" at ULA.vhd(32) File: C:/intelFPGA_lite/18.0/RelogioProj/test/ULA.vhd Line: 32
+Info (10041): Inferred latch for "d[30]" at ULA.vhd(32) File: C:/intelFPGA_lite/18.0/RelogioProj/test/ULA.vhd Line: 32
+Info (10041): Inferred latch for "d[31]" at ULA.vhd(32) File: C:/intelFPGA_lite/18.0/RelogioProj/test/ULA.vhd Line: 32
+Info (12128): Elaborating entity "debouncer" for hierarchy "debouncer:debounceIncrement" File: C:/intelFPGA_lite/18.0/RelogioProj/test/Relogio.vhd Line: 79
+Info (12128): Elaborating entity "acumulador" for hierarchy "acumulador:speedFactor" File: C:/intelFPGA_lite/18.0/RelogioProj/test/Relogio.vhd Line: 82
+Info (12128): Elaborating entity "acumulador" for hierarchy "acumulador:controlOption" File: C:/intelFPGA_lite/18.0/RelogioProj/test/Relogio.vhd Line: 97
+Info (12128): Elaborating entity "menu_controller" for hierarchy "menu_controller:menuControl" File: C:/intelFPGA_lite/18.0/RelogioProj/test/Relogio.vhd Line: 98
+Info (12128): Elaborating entity "acumulador" for hierarchy "acumulador:hora" File: C:/intelFPGA_lite/18.0/RelogioProj/test/Relogio.vhd Line: 104
+Info (12128): Elaborating entity "conversorHex7Seg" for hierarchy "conversorHex7Seg:A6" File: C:/intelFPGA_lite/18.0/RelogioProj/test/Relogio.vhd Line: 108
+Info (12128): Elaborating entity "hourDecoder" for hierarchy "hourDecoder:outputHour" File: C:/intelFPGA_lite/18.0/RelogioProj/test/Relogio.vhd Line: 114
+Info (276014): Found 8 instances of uninferred RAM logic
+    Info (276004): RAM logic "conversorHex7Seg:outputSpeed|content" is uninferred due to inappropriate RAM size File: C:/intelFPGA_lite/18.0/RelogioProj/test/conversorHex7Seg.vhd Line: 51
+    Info (276004): RAM logic "hourDecoder:outputHour|sel" is uninferred due to inappropriate RAM size File: C:/intelFPGA_lite/18.0/RelogioProj/test/hourDecoder.vhd Line: 39
+    Info (276004): RAM logic "conversorHex7Seg:A6|content" is uninferred due to inappropriate RAM size File: C:/intelFPGA_lite/18.0/RelogioProj/test/conversorHex7Seg.vhd Line: 51
+    Info (276004): RAM logic "conversorHex7Seg:A7|content" is uninferred due to inappropriate RAM size File: C:/intelFPGA_lite/18.0/RelogioProj/test/conversorHex7Seg.vhd Line: 51
+    Info (276004): RAM logic "conversorHex7Seg:A8|content" is uninferred due to inappropriate RAM size File: C:/intelFPGA_lite/18.0/RelogioProj/test/conversorHex7Seg.vhd Line: 51
+    Info (276004): RAM logic "conversorHex7Seg:A9|content" is uninferred due to inappropriate RAM size File: C:/intelFPGA_lite/18.0/RelogioProj/test/conversorHex7Seg.vhd Line: 51
+    Info (276004): RAM logic "hourDecoder:outputHour|conversorHex7Seg:outputUnitHour|content" is uninferred due to inappropriate RAM size File: C:/intelFPGA_lite/18.0/RelogioProj/test/conversorHex7Seg.vhd Line: 51
+    Info (276004): RAM logic "hourDecoder:outputHour|conversorHex7Seg:outputDecHour|content" is uninferred due to inappropriate RAM size File: C:/intelFPGA_lite/18.0/RelogioProj/test/conversorHex7Seg.vhd Line: 51
+Warning (14026): LATCH primitive "hourDecoder:outputHour|ULA:hourULA|d[1]" is permanently enabled File: C:/intelFPGA_lite/18.0/RelogioProj/test/ULA.vhd Line: 32
+Warning (14026): LATCH primitive "hourDecoder:outputHour|ULA:hourULA|d[2]" is permanently enabled File: C:/intelFPGA_lite/18.0/RelogioProj/test/ULA.vhd Line: 32
+Warning (14026): LATCH primitive "hourDecoder:outputHour|ULA:hourULA|d[3]" is permanently enabled File: C:/intelFPGA_lite/18.0/RelogioProj/test/ULA.vhd Line: 32
+Info (278001): Inferred 6 megafunctions from design logic
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "hourDecoder:outputHour|ULA:hourULA|Div0" File: C:/intelFPGA_lite/18.0/RelogioProj/test/ULA.vhd Line: 38
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "hourDecoder:outputHour|ULA:hourULA|Mod2" File: C:/intelFPGA_lite/18.0/RelogioProj/test/ULA.vhd Line: 40
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "hourDecoder:outputHour|ULA:hourULA|Mod0" File: C:/intelFPGA_lite/18.0/RelogioProj/test/ULA.vhd Line: 38
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "hourDecoder:outputHour|ULA:hourULA|Mod1" File: C:/intelFPGA_lite/18.0/RelogioProj/test/ULA.vhd Line: 38
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "hourDecoder:outputHour|ULA:hourULA|Div2" File: C:/intelFPGA_lite/18.0/RelogioProj/test/ULA.vhd Line: 40
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "hourDecoder:outputHour|ULA:hourULA|Div1" File: C:/intelFPGA_lite/18.0/RelogioProj/test/ULA.vhd Line: 38
+Info (12130): Elaborated megafunction instantiation "hourDecoder:outputHour|ULA:hourULA|lpm_divide:Div0" File: C:/intelFPGA_lite/18.0/RelogioProj/test/ULA.vhd Line: 38
+Info (12133): Instantiated megafunction "hourDecoder:outputHour|ULA:hourULA|lpm_divide:Div0" with the following parameter: File: C:/intelFPGA_lite/18.0/RelogioProj/test/ULA.vhd Line: 38
+    Info (12134): Parameter "LPM_WIDTHN" = "32"
+    Info (12134): Parameter "LPM_WIDTHD" = "4"
+    Info (12134): Parameter "LPM_NREPRESENTATION" = "UNSIGNED"
+    Info (12134): Parameter "LPM_DREPRESENTATION" = "UNSIGNED"
+Info (12021): Found 1 design units, including 1 entities, in source file db/lpm_divide_0jm.tdf
+    Info (12023): Found entity 1: lpm_divide_0jm File: C:/intelFPGA_lite/18.0/RelogioProj/test/db/lpm_divide_0jm.tdf Line: 24
+Info (12021): Found 1 design units, including 1 entities, in source file db/sign_div_unsign_olh.tdf
+    Info (12023): Found entity 1: sign_div_unsign_olh File: C:/intelFPGA_lite/18.0/RelogioProj/test/db/sign_div_unsign_olh.tdf Line: 24
+Info (12021): Found 1 design units, including 1 entities, in source file db/alt_u_div_47f.tdf
+    Info (12023): Found entity 1: alt_u_div_47f File: C:/intelFPGA_lite/18.0/RelogioProj/test/db/alt_u_div_47f.tdf Line: 26
+Info (12021): Found 1 design units, including 1 entities, in source file db/add_sub_7pc.tdf
+    Info (12023): Found entity 1: add_sub_7pc File: C:/intelFPGA_lite/18.0/RelogioProj/test/db/add_sub_7pc.tdf Line: 22
+Info (12021): Found 1 design units, including 1 entities, in source file db/add_sub_8pc.tdf
+    Info (12023): Found entity 1: add_sub_8pc File: C:/intelFPGA_lite/18.0/RelogioProj/test/db/add_sub_8pc.tdf Line: 22
+Info (12130): Elaborated megafunction instantiation "hourDecoder:outputHour|ULA:hourULA|lpm_divide:Mod2" File: C:/intelFPGA_lite/18.0/RelogioProj/test/ULA.vhd Line: 40
+Info (12133): Instantiated megafunction "hourDecoder:outputHour|ULA:hourULA|lpm_divide:Mod2" with the following parameter: File: C:/intelFPGA_lite/18.0/RelogioProj/test/ULA.vhd Line: 40
+    Info (12134): Parameter "LPM_WIDTHN" = "32"
+    Info (12134): Parameter "LPM_WIDTHD" = "32"
+    Info (12134): Parameter "LPM_NREPRESENTATION" = "UNSIGNED"
+    Info (12134): Parameter "LPM_DREPRESENTATION" = "UNSIGNED"
+Info (12021): Found 1 design units, including 1 entities, in source file db/lpm_divide_kcm.tdf
+    Info (12023): Found entity 1: lpm_divide_kcm File: C:/intelFPGA_lite/18.0/RelogioProj/test/db/lpm_divide_kcm.tdf Line: 24
+Info (12021): Found 1 design units, including 1 entities, in source file db/sign_div_unsign_9nh.tdf
+    Info (12023): Found entity 1: sign_div_unsign_9nh File: C:/intelFPGA_lite/18.0/RelogioProj/test/db/sign_div_unsign_9nh.tdf Line: 24
+Info (12021): Found 1 design units, including 1 entities, in source file db/alt_u_div_6af.tdf
+    Info (12023): Found entity 1: alt_u_div_6af File: C:/intelFPGA_lite/18.0/RelogioProj/test/db/alt_u_div_6af.tdf Line: 26
+Info (12130): Elaborated megafunction instantiation "hourDecoder:outputHour|ULA:hourULA|lpm_divide:Mod0" File: C:/intelFPGA_lite/18.0/RelogioProj/test/ULA.vhd Line: 38
+Info (12133): Instantiated megafunction "hourDecoder:outputHour|ULA:hourULA|lpm_divide:Mod0" with the following parameter: File: C:/intelFPGA_lite/18.0/RelogioProj/test/ULA.vhd Line: 38
+    Info (12134): Parameter "LPM_WIDTHN" = "32"
+    Info (12134): Parameter "LPM_WIDTHD" = "32"
+    Info (12134): Parameter "LPM_NREPRESENTATION" = "UNSIGNED"
+    Info (12134): Parameter "LPM_DREPRESENTATION" = "UNSIGNED"
+Info (12130): Elaborated megafunction instantiation "hourDecoder:outputHour|ULA:hourULA|lpm_divide:Div2" File: C:/intelFPGA_lite/18.0/RelogioProj/test/ULA.vhd Line: 40
+Info (12133): Instantiated megafunction "hourDecoder:outputHour|ULA:hourULA|lpm_divide:Div2" with the following parameter: File: C:/intelFPGA_lite/18.0/RelogioProj/test/ULA.vhd Line: 40
+    Info (12134): Parameter "LPM_WIDTHN" = "32"
+    Info (12134): Parameter "LPM_WIDTHD" = "4"
+    Info (12134): Parameter "LPM_NREPRESENTATION" = "UNSIGNED"
+    Info (12134): Parameter "LPM_DREPRESENTATION" = "UNSIGNED"
+Info (13000): Registers with preset signals will power-up high File: C:/intelFPGA_lite/18.0/RelogioProj/test/pulsoDivisor.vhd Line: 19
+Info (13003): DEV_CLRn pin will set, and not reset, register with preset signal due to NOT Gate Push-Back
+Warning (13024): Output pins are stuck at VCC or GND
+    Warning (13410): Pin "HEX1[3]" is stuck at VCC File: C:/intelFPGA_lite/18.0/RelogioProj/test/Relogio.vhd Line: 24
+Info (286030): Timing-Driven Synthesis is running
+Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
+    Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
+Warning (21074): Design contains 17 input pin(s) that do not drive logic
+    Warning (15610): No output dependent on input pin "SW[1]" File: C:/intelFPGA_lite/18.0/RelogioProj/test/Relogio.vhd Line: 20
+    Warning (15610): No output dependent on input pin "SW[2]" File: C:/intelFPGA_lite/18.0/RelogioProj/test/Relogio.vhd Line: 20
+    Warning (15610): No output dependent on input pin "SW[3]" File: C:/intelFPGA_lite/18.0/RelogioProj/test/Relogio.vhd Line: 20
+    Warning (15610): No output dependent on input pin "SW[4]" File: C:/intelFPGA_lite/18.0/RelogioProj/test/Relogio.vhd Line: 20
+    Warning (15610): No output dependent on input pin "SW[5]" File: C:/intelFPGA_lite/18.0/RelogioProj/test/Relogio.vhd Line: 20
+    Warning (15610): No output dependent on input pin "SW[6]" File: C:/intelFPGA_lite/18.0/RelogioProj/test/Relogio.vhd Line: 20
+    Warning (15610): No output dependent on input pin "SW[7]" File: C:/intelFPGA_lite/18.0/RelogioProj/test/Relogio.vhd Line: 20
+    Warning (15610): No output dependent on input pin "SW[8]" File: C:/intelFPGA_lite/18.0/RelogioProj/test/Relogio.vhd Line: 20
+    Warning (15610): No output dependent on input pin "SW[9]" File: C:/intelFPGA_lite/18.0/RelogioProj/test/Relogio.vhd Line: 20
+    Warning (15610): No output dependent on input pin "SW[10]" File: C:/intelFPGA_lite/18.0/RelogioProj/test/Relogio.vhd Line: 20
+    Warning (15610): No output dependent on input pin "SW[11]" File: C:/intelFPGA_lite/18.0/RelogioProj/test/Relogio.vhd Line: 20
+    Warning (15610): No output dependent on input pin "SW[12]" File: C:/intelFPGA_lite/18.0/RelogioProj/test/Relogio.vhd Line: 20
+    Warning (15610): No output dependent on input pin "SW[13]" File: C:/intelFPGA_lite/18.0/RelogioProj/test/Relogio.vhd Line: 20
+    Warning (15610): No output dependent on input pin "SW[14]" File: C:/intelFPGA_lite/18.0/RelogioProj/test/Relogio.vhd Line: 20
+    Warning (15610): No output dependent on input pin "SW[15]" File: C:/intelFPGA_lite/18.0/RelogioProj/test/Relogio.vhd Line: 20
+    Warning (15610): No output dependent on input pin "SW[16]" File: C:/intelFPGA_lite/18.0/RelogioProj/test/Relogio.vhd Line: 20
+    Warning (15610): No output dependent on input pin "SW[17]" File: C:/intelFPGA_lite/18.0/RelogioProj/test/Relogio.vhd Line: 20
+Info (21057): Implemented 6610 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 23 input pins
+    Info (21059): Implemented 56 output pins
+    Info (21061): Implemented 6531 logic cells
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 29 warnings
+    Info: Peak virtual memory: 4879 megabytes
+    Info: Processing ended: Wed Oct 03 00:40:18 2018
+    Info: Elapsed time: 00:00:27
+    Info: Total CPU time (on all processors): 00:00:44
+
+

@@ -1,0 +1,329 @@
+------------------------------------------------------------
+Timing Analyzer Summary
+------------------------------------------------------------
+
+Type  : Slow 1200mV 85C Model Setup 'CLOCK_50'
+Slack : -4.955
+TNS   : -302.490
+
+Type  : Slow 1200mV 85C Model Setup 'pulsoDivisor:pulsoDecSegundo|clk_sec'
+Slack : -4.682
+TNS   : -133.226
+
+Type  : Slow 1200mV 85C Model Setup 'pulsoDivisor:pulsoSegundo|clk_sec'
+Slack : -4.063
+TNS   : -131.650
+
+Type  : Slow 1200mV 85C Model Setup 'pulsoDivisor:pulsoDecMinuto|clk_sec'
+Slack : -3.992
+TNS   : -130.984
+
+Type  : Slow 1200mV 85C Model Setup 'pulsoDivisor:pulsoMinuto|clk_sec'
+Slack : -3.970
+TNS   : -131.686
+
+Type  : Slow 1200mV 85C Model Setup 'debouncer:debounceOption|debounced_press'
+Slack : -3.023
+TNS   : -58.026
+
+Type  : Slow 1200mV 85C Model Setup 'debouncer:debounceSpeed|debounced_press'
+Slack : -2.884
+TNS   : -62.562
+
+Type  : Slow 1200mV 85C Model Setup 'pulsoDivisor:pulsoHora|clk_sec'
+Slack : -2.751
+TNS   : -57.068
+
+Type  : Slow 1200mV 85C Model Setup 'pulsoDivisor:pulsoBlink|clk_sec'
+Slack : -1.228
+TNS   : -5.696
+
+Type  : Slow 1200mV 85C Model Hold 'CLOCK_50'
+Slack : -0.686
+TNS   : -0.686
+
+Type  : Slow 1200mV 85C Model Hold 'pulsoDivisor:pulsoBlink|clk_sec'
+Slack : 0.410
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Hold 'debouncer:debounceSpeed|debounced_press'
+Slack : 0.530
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Hold 'pulsoDivisor:pulsoHora|clk_sec'
+Slack : 0.546
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Hold 'debouncer:debounceOption|debounced_press'
+Slack : 0.561
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Hold 'pulsoDivisor:pulsoDecSegundo|clk_sec'
+Slack : 0.638
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Hold 'pulsoDivisor:pulsoDecMinuto|clk_sec'
+Slack : 0.640
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Hold 'pulsoDivisor:pulsoMinuto|clk_sec'
+Slack : 0.642
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Hold 'pulsoDivisor:pulsoSegundo|clk_sec'
+Slack : 0.644
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'CLOCK_50'
+Slack : -3.000
+TNS   : -122.505
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'pulsoDivisor:pulsoDecMinuto|clk_sec'
+Slack : -1.285
+TNS   : -83.525
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'pulsoDivisor:pulsoDecSegundo|clk_sec'
+Slack : -1.285
+TNS   : -83.525
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'pulsoDivisor:pulsoMinuto|clk_sec'
+Slack : -1.285
+TNS   : -83.525
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'pulsoDivisor:pulsoSegundo|clk_sec'
+Slack : -1.285
+TNS   : -83.525
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'debouncer:debounceOption|debounced_press'
+Slack : -1.285
+TNS   : -41.120
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'debouncer:debounceSpeed|debounced_press'
+Slack : -1.285
+TNS   : -41.120
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'pulsoDivisor:pulsoHora|clk_sec'
+Slack : -1.285
+TNS   : -41.120
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'pulsoDivisor:pulsoBlink|clk_sec'
+Slack : -1.285
+TNS   : -11.565
+
+Type  : Slow 1200mV 0C Model Setup 'CLOCK_50'
+Slack : -4.499
+TNS   : -268.474
+
+Type  : Slow 1200mV 0C Model Setup 'pulsoDivisor:pulsoDecSegundo|clk_sec'
+Slack : -4.243
+TNS   : -112.694
+
+Type  : Slow 1200mV 0C Model Setup 'pulsoDivisor:pulsoSegundo|clk_sec'
+Slack : -3.673
+TNS   : -111.335
+
+Type  : Slow 1200mV 0C Model Setup 'pulsoDivisor:pulsoDecMinuto|clk_sec'
+Slack : -3.621
+TNS   : -110.637
+
+Type  : Slow 1200mV 0C Model Setup 'pulsoDivisor:pulsoMinuto|clk_sec'
+Slack : -3.566
+TNS   : -111.218
+
+Type  : Slow 1200mV 0C Model Setup 'debouncer:debounceOption|debounced_press'
+Slack : -2.686
+TNS   : -48.457
+
+Type  : Slow 1200mV 0C Model Setup 'debouncer:debounceSpeed|debounced_press'
+Slack : -2.442
+TNS   : -52.024
+
+Type  : Slow 1200mV 0C Model Setup 'pulsoDivisor:pulsoHora|clk_sec'
+Slack : -2.327
+TNS   : -47.224
+
+Type  : Slow 1200mV 0C Model Setup 'pulsoDivisor:pulsoBlink|clk_sec'
+Slack : -1.081
+TNS   : -4.967
+
+Type  : Slow 1200mV 0C Model Hold 'CLOCK_50'
+Slack : -0.633
+TNS   : -0.633
+
+Type  : Slow 1200mV 0C Model Hold 'pulsoDivisor:pulsoBlink|clk_sec'
+Slack : 0.366
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Hold 'debouncer:debounceSpeed|debounced_press'
+Slack : 0.468
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Hold 'pulsoDivisor:pulsoHora|clk_sec'
+Slack : 0.497
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Hold 'debouncer:debounceOption|debounced_press'
+Slack : 0.500
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Hold 'pulsoDivisor:pulsoDecSegundo|clk_sec'
+Slack : 0.583
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Hold 'pulsoDivisor:pulsoDecMinuto|clk_sec'
+Slack : 0.585
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Hold 'pulsoDivisor:pulsoMinuto|clk_sec'
+Slack : 0.588
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Hold 'pulsoDivisor:pulsoSegundo|clk_sec'
+Slack : 0.588
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'CLOCK_50'
+Slack : -3.000
+TNS   : -122.505
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'pulsoDivisor:pulsoDecMinuto|clk_sec'
+Slack : -1.285
+TNS   : -83.525
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'pulsoDivisor:pulsoDecSegundo|clk_sec'
+Slack : -1.285
+TNS   : -83.525
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'pulsoDivisor:pulsoMinuto|clk_sec'
+Slack : -1.285
+TNS   : -83.525
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'pulsoDivisor:pulsoSegundo|clk_sec'
+Slack : -1.285
+TNS   : -83.525
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'debouncer:debounceOption|debounced_press'
+Slack : -1.285
+TNS   : -41.120
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'debouncer:debounceSpeed|debounced_press'
+Slack : -1.285
+TNS   : -41.120
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'pulsoDivisor:pulsoHora|clk_sec'
+Slack : -1.285
+TNS   : -41.120
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'pulsoDivisor:pulsoBlink|clk_sec'
+Slack : -1.285
+TNS   : -11.565
+
+Type  : Fast 1200mV 0C Model Setup 'CLOCK_50'
+Slack : -2.005
+TNS   : -103.507
+
+Type  : Fast 1200mV 0C Model Setup 'pulsoDivisor:pulsoDecSegundo|clk_sec'
+Slack : -1.928
+TNS   : -33.474
+
+Type  : Fast 1200mV 0C Model Setup 'pulsoDivisor:pulsoSegundo|clk_sec'
+Slack : -1.546
+TNS   : -32.672
+
+Type  : Fast 1200mV 0C Model Setup 'pulsoDivisor:pulsoMinuto|clk_sec'
+Slack : -1.502
+TNS   : -32.487
+
+Type  : Fast 1200mV 0C Model Setup 'pulsoDivisor:pulsoDecMinuto|clk_sec'
+Slack : -1.501
+TNS   : -32.215
+
+Type  : Fast 1200mV 0C Model Setup 'debouncer:debounceSpeed|debounced_press'
+Slack : -0.948
+TNS   : -15.533
+
+Type  : Fast 1200mV 0C Model Setup 'debouncer:debounceOption|debounced_press'
+Slack : -0.908
+TNS   : -12.840
+
+Type  : Fast 1200mV 0C Model Setup 'pulsoDivisor:pulsoHora|clk_sec'
+Slack : -0.878
+TNS   : -12.948
+
+Type  : Fast 1200mV 0C Model Setup 'pulsoDivisor:pulsoBlink|clk_sec'
+Slack : -0.347
+TNS   : -1.472
+
+Type  : Fast 1200mV 0C Model Hold 'CLOCK_50'
+Slack : -0.543
+TNS   : -0.543
+
+Type  : Fast 1200mV 0C Model Hold 'pulsoDivisor:pulsoBlink|clk_sec'
+Slack : 0.186
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Hold 'pulsoDivisor:pulsoHora|clk_sec'
+Slack : 0.246
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Hold 'debouncer:debounceSpeed|debounced_press'
+Slack : 0.247
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Hold 'debouncer:debounceOption|debounced_press'
+Slack : 0.258
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Hold 'pulsoDivisor:pulsoMinuto|clk_sec'
+Slack : 0.289
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Hold 'pulsoDivisor:pulsoDecMinuto|clk_sec'
+Slack : 0.291
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Hold 'pulsoDivisor:pulsoDecSegundo|clk_sec'
+Slack : 0.291
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Hold 'pulsoDivisor:pulsoSegundo|clk_sec'
+Slack : 0.293
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'CLOCK_50'
+Slack : -3.000
+TNS   : -101.693
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'pulsoDivisor:pulsoDecMinuto|clk_sec'
+Slack : -1.000
+TNS   : -65.000
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'pulsoDivisor:pulsoDecSegundo|clk_sec'
+Slack : -1.000
+TNS   : -65.000
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'pulsoDivisor:pulsoMinuto|clk_sec'
+Slack : -1.000
+TNS   : -65.000
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'pulsoDivisor:pulsoSegundo|clk_sec'
+Slack : -1.000
+TNS   : -65.000
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'debouncer:debounceOption|debounced_press'
+Slack : -1.000
+TNS   : -32.000
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'debouncer:debounceSpeed|debounced_press'
+Slack : -1.000
+TNS   : -32.000
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'pulsoDivisor:pulsoHora|clk_sec'
+Slack : -1.000
+TNS   : -32.000
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'pulsoDivisor:pulsoBlink|clk_sec'
+Slack : -1.000
+TNS   : -9.000
+
+------------------------------------------------------------

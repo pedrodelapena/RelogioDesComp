@@ -1,0 +1,18 @@
+-- begin_signature
+-- hourDecoder(WORDSIZE
+-- 32
+-- LEDSIZE
+-- 4)
+-- end_signature
+WIDTH=4;
+DEPTH=4;
+
+ADDRESS_RADIX=UNS;
+DATA_RADIX=BIN;
+
+CONTENT BEGIN
+	3 :	1111;
+	2 :	1010;
+	1 :	1110;
+	0 :	1110;
+END;
