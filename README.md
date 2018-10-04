@@ -29,3 +29,7 @@ Os [acumuladores](/RelogioProj/acumulador.vhd) são registradores utilizados par
 Uma [ULA](/RelogioProj/ULA.vhd) é utilizada em conjunto com [hourDecoder](/RelogioProj/hourDecoder.vhd) para realizar a conversão do formato de hora para AM/PM para 24 horas (o oposto também é válido), além de quebrar o acumulador de 23 horas para as casas decimais. Após isto, o valor é convertido para ser apresentado no display de 7 segmentos.
 
 Por fim, o [menu controller](/RelogioProj/menu_controller.vhd) é utilizado para incrementar o valor de outros acumuladores (com exceção da dezena de hora), sendo possivel, assim, ajustar o relógio da maneira desejada. Ele também envia uma máscara para o display a ser modificado para que ele fique piscando.
+
+## Dificuldades
+
+A principal dificuldade do projeto foi o [Intel® Quartus® Prime](http://fpgasoftware.intel.com/?edition=lite). Ocorreram muitos problemas na simulação, principalmente no WaveForm. Após diversas tentativas, o grupo descobriu que o simulador não simulava valores intermediários, deixando-os como "undefined". Isso fez com que o grupo perdesse muito tempo "tentando solucionar" algo que provavelmente já estava funcionando. Além disso, ocorreram problemas com manipulação de tipos do VHDL, incluindo parsing.
